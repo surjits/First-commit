@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#summary {
+   
+   background-color: DodgerBlue;
+}
+</style>
+</head>
+<body>
+<h2>Execution Report</h2>
+    <table class = "centre" style="background-color:#00FF00">
+        <tr>
+          <th>Test Name</th>
+          <th>Total Executed</th>
+		  <th>Retried</th>
+          <th>Passed</th>
+          <th>Skipped</th>
+          <th>Failed</th>
+          <th>Browser</th>
+          <th>Start Time(hh:mm:ss)</th>
+          <th>End Time(hh:mm:ss)</th>
+          <th>Execute Time(hh:mm:ss)</th>
+         </tr>
+       
+       $Test_Case_Summary$
+    </table>
+
+    <table id="summary" class="centre">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Method</th>
+          <th>Start Time</th>
+          <th>Execution Time (hh:mm:ss)</th>
+		</tr>
+      </thead> 
+      $Test_Case_Detail$
+    </table>
+</body>
+</html>

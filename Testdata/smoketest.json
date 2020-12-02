@@ -1,0 +1,269 @@
+{
+
+	"createMultipleFilter": [
+		{
+
+			"Run": "No",
+			"bussinessApp": "autoBusinessApplication",
+			"dbconnector": "automationConnection",
+			"Tablename": "Ms_Products",
+			"Filter1":"Movie Name",
+			"Filter2":"Product Type",
+			"text1":"MOVIE_NAME = 'The Dark Tower'",
+			"text2":"PRODUCT_TYPE = 'Movie'"
+
+		}
+	],
+
+	"createDomainLOV": [
+		{
+			"Run": "Yes",
+			"lovType": "Query",
+			"lovQuery": "SELECT CITY,REGION FROM MS_STORES"
+
+		}
+
+	],
+
+	"createDomainWithMultiTable": [
+		{
+			"Run": "Yes",
+			"bussinessApp": "Splash Samples",
+			"dbconnector": "splash_demos",
+			"tablenames":"Ms_Products,Ms_Sales"
+
+		}
+
+	],
+	"createOracleEBSDomainWithMultiTable": [
+		{
+			"Run": "Yes",
+			"bussinessApp": "Splash Samples",
+			"dbconnector": "Oracle EBS",
+			"tablenames":"HRFG_PAYROLLS,HRFV_PAYROLLS"
+
+		}
+
+	],
+
+	"shareDomainWithAnUser": [
+		{
+			"Run": "Yes",
+			"domainName": "DOM_87",
+			"user_name":"TEST_87",
+			"password": "1111",
+			"new_password": "7890"
+
+		}
+
+	],
+	"createReport": [
+		{
+			"Run": "Yes",
+			"domainName": "DOM_87",
+			"tablename":"Ms_Products"
+
+		}
+
+	],
+	"createReportSet": [
+		{
+			"Run": "Yes",
+			"businessapp_name": "Splash Samples"
+
+		}
+
+	],
+	"createNonEbsChart": [
+		{
+			"Run": "Yes",
+			"domainName": "AUTODOM11",
+			"tablename":"Ms Sales",
+			"col_dimension": "Sales Id",
+			"col_measures": "Store Key"
+		}
+
+	],
+	"createDashboard": [
+		{
+			"Run": "Yes",
+			"chartName": "Test110",
+			"businessapp": "Splash Samples"
+		}
+
+	],
+	"createJoinForDomainTable": [
+		{
+			"Run": "Yes",
+			"domainName": "DOM_87",
+			"tablename":"Ms Products"
+
+		}
+
+	],
+	"checkConnectionStatus": [
+		{
+			"Run": "Yes",
+			"connector": "Oracle EBS"
+
+		}
+
+	],
+	"shareConnectorWithUser": [
+		{
+			"Run": "Yes",
+			"connector": "TEST_CON11",
+			"user_name": "TEST_20"
+
+		}
+
+	],
+	"createSplashDBConnector": [
+		{
+			"Run": "No",
+			"connector_type": "Oracle",
+			"system_type": "Oracle E-Business Suite",
+			"connection_type": "Manual",
+			"hostname": "192.168.8.233",
+			"sid": "ebs19c",
+			"connection_user": "apps",
+			"connection_password": "apps",
+			"port_number": "1521",
+			"schema_name": "testdb"
+
+		}
+
+	],
+
+	"createOracleDBConnector": [
+		{
+			"Run": "Yes",
+			"connector_type": "Oracle",
+			"system_type": "Oracle E-Business Suite",
+			"connection_type": "Manual",
+			"hostname": "192.168.8.233",
+			"sid": "ebs19c",
+			"connection_user": "apps",
+			"connection_password": "apps",
+			"port_number": "1521",
+			"schema_name": "testdb"
+
+		}
+
+	],
+	"createUserGroup": [
+		{
+			"Run": "Yes"
+
+		}
+
+	],
+	"createUserGroupAndAddUser": [
+		{
+			"Run": "Yes"
+
+		}
+
+	],
+	"createUserMapping": [
+		{
+			"Run": "Yes",
+		    "authentication_method": "Native",
+			"connector": "TEST_CON11",
+			"splashBi_empname": "TEST 87"
+
+		}
+
+	],
+	"importOracleEBSResponsibilities": [
+		{
+			"Run": "Yes",
+			"connectorName": "TEST_CON11",
+			"responsibility": "1Sync Super User,Standard"
+
+		}
+
+	],
+	"addSResponsibilitiesToUser": [
+		{
+			"Run": "Yes",
+			"splashBi_empname": "TEST 87"
+		}
+
+	],
+	"createBusinessApplication": [
+		{
+			"Run": "Yes"
+
+		}
+
+	],
+	"createFolder": [
+		{
+			"Run": "Yes",
+			"businessapp": "autoBusinessApplication"
+
+		}
+
+	],
+	"setUserGroupCreationSiteInSettings": [
+		{
+			"Run": "Yes",
+			"site_option":"On"
+		}
+
+	],
+	"setDashboardListviewSiteInSettings": [
+		{
+			"Run": "Yes",
+			"site_option":"Both"
+		}
+
+	],
+	"createUser": [
+		{
+			"Run": "Yes",
+			"authentication_method": "Native",
+			"password": "1111",
+			"first_name": "AT",
+			"last_name": "AT",
+			"email": "test@test.com",
+
+			"create_privilege": "yes",
+			"create_all": "yes",
+			"create_Domain": "Yes",
+			"create_Report": "Yes",
+			"create_Dashboard": "Yes",
+			"create_Chart": "Yes",
+			"create_Report_set": "Yes",
+
+			"copy_privilege": "yes",
+			"copy_all": "yes",
+			"copy_Domain": "No",
+			"copy_Report": "Yes",
+			"copy_Dashboard": "Yes",
+			"copy_Chart": "Yes",
+			"copy_Report_set": "Yes",
+
+			"share_privilege": "yes",
+			"share_all": "yes",
+
+			"share_Domain": "Yes",
+			"share_Report": "Yes",
+			"share_Dashboard": "Yes",
+			"share_Chart": "Yes",
+			"share_Report_set": "Yes",
+			"share_Report_set_process": "Yes",
+
+			"distribution_privilege": "yes",
+			"distribution_all": "yes",
+			"distribution_email": "Yes",
+			"distribution_ftp": "No",
+			"distribution_filesystem": "No",
+			"distribution_bursting": "No",
+			"distribution_publishing": "No"
+		}
+
+	]
+
+}

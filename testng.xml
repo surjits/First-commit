@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestSuite">
+
+    <listeners>
+        <listener class-name="com.splashbi.listener.SetAnnotation"/>
+        <listener class-name="com.splashbi.listener.RetryListener"/>
+        <listener class-name="com.splashbi.report.EmailableCustomReport"/>
+    </listeners>
+    <test name="Smoke_Test" preserve-order="true">
+        <classes>
+            <class name="com.splashbi.sanitydata.admin.Users"/>
+            <class name="com.splashbi.sanitydata.admin.Connectors"/>
+            <class name="com.splashbi.sanitydata.admin.ERPMapping">
+                <methods>
+                    <include name="createUserMapping" />
+                    <include name="importOracleEBSResponsibilities" />
+                    <include name="addSResponsibilitiesToUser" />
+                </methods>
+            </class>
+            <class name="com.splashbi.sanitydata.admin.setup"/>
+            <class name="com.splashbi.sanitydata.admin.Settings"/>
+            <class name="com.splashbi.sanitydata.domain.Domain"/>
+            <class name="com.splashbi.sanitydata.report.Reports"/>
+            <class name="com.splashbi.sanitydata.dashboard.Dashboard">
+                <methods>
+                    <include name="createNonEbsChart" />
+                    <include name="createDashboard" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

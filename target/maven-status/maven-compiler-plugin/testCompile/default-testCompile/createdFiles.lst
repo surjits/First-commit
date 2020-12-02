@@ -1,0 +1,11 @@
+com\splashbi\sanitydata\admin\setup.class
+com\splashbi\sanitydata\admin\Connectors.class
+com\splashbi\sanitydata\admin\Users.class
+com\splashbi\sanitydata\report\Report.class
+com\splashbi\sanitydata\dashboard\Dashboard.class
+com\splashbi\sanitydata\OracleEBS.class
+com\splashbi\sanitydata\report\Reports.class
+test\java\com\splashbi\sanitydata\admin\Settings.class
+com\splashbi\sanitydata\admin\ERPMapping.class
+com\splashbi\sanitydata\domain\Domain.class
+TestCode\TestMyCode.class
