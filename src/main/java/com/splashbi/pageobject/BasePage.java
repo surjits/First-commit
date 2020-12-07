@@ -6,7 +6,7 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
-
+import org.testng.Assert;
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
@@ -51,6 +51,7 @@ public class BasePage <T extends InitPageElement> {
 
 	public void setExtentTest(ExtentTest test) {
 		this.test=test;
+		wait(1);
 	}
 	public BasePage(WebDriver driver, ExtentTest test) {
 		this.log4jprop = Constant.LOG4J_PATH;
@@ -87,7 +88,7 @@ public class BasePage <T extends InitPageElement> {
 			}
 		}catch(Exception e) {
 			logger.error("Element not displayed",e);
-			throw e;
+			isDisplayed = false;
 		}
 		return isDisplayed;
 	}
@@ -114,25 +115,31 @@ public class BasePage <T extends InitPageElement> {
 	}
 	/***********To get Dynamic element********************/
 	public WebElement getWebElement(T element,String val) {
+		WebElement w =  null;
 		try{
-			return driver.findElement(element.getDynamicBy(val));
+			w = driver.findElement(element.getDynamicBy(val));
 		}catch(NoSuchElementException e) {
 			wait(1);
-			return driver.findElement(element.getDynamicBy(val));
+			w = driver.findElement(element.getDynamicBy(val));
 		}catch(Exception e) {
+			test.log(LogStatus.ERROR, printError(e,3));
+			test.log(LogStatus.FAIL, "Could not find the element" );
 			throw e;
 		}
+		return w;
 	}
 	/***********To get element********************/
 	public WebElement getWebElement(T element) {
+		WebElement w =  null;
 		try {
-			return driver.findElement(element.getBy());
-		}catch(NoSuchElementException e) {
-			wait(1);
-			return driver.findElement(element.getBy());
+			w = driver.findElement(element.getBy());
 		}catch(Exception e) {
+			wait(1);
+			w= driver.findElement(element.getBy());
+			logger.debug("Could not find element:"+element,e);
 			throw e;
 		}
+		return w;
 	}
 	public List<WebElement> getWebElementList(T element) {
 		List<WebElement> wl = null;
@@ -140,6 +147,8 @@ public class BasePage <T extends InitPageElement> {
 			wl = driver.findElements(element.getBy());
 		}catch(Exception e){
 			logger.error("List Element not found",e);
+			test.log(LogStatus.ERROR, printError(e,3));
+			test.log(LogStatus.FAIL, "Could not find the list element" );
 		}
 		return wl;
 	}
@@ -153,7 +162,10 @@ public class BasePage <T extends InitPageElement> {
 		}
 		return wl;
 	}
-
+	public void exitExecution(){
+		logger.info("Exiting Execution as something not working");
+		Assert.assertTrue(false);
+	}
 	public void waitForPageLoad() {
 
 		ExpectedCondition<Boolean> pageLoadCondition = new
@@ -217,33 +229,44 @@ public class BasePage <T extends InitPageElement> {
 			test.log(LogStatus.FAIL, "Could not select the given item from list" );
 		}
 	}
-	public void selectFromlistByKeyAction(T list, String itemname){
+	public boolean selectFromlistByKeyAction(T list, String itemname){
+		wait(1);
+		String text="";
+		boolean selected = false;
 		logger.info("value to be selected is:"+itemname);
 		WebElement w = getWebElement(list);
-		w.click();
 		if(w.getText().contains(itemname)){
 			actions.sendKeys(Keys.ENTER).build().perform();
+			selected = true;
+			return selected;
 		}
-		actions.sendKeys(Keys.HOME);
-		//logger.info("Text in list:"+w.getText());
+		w.click();
+	   	actions.sendKeys(Keys.HOME);
+	   	logger.info("Text at home element is:"+w.getText());
 		while(!w.getText().contains(itemname)){
 			actions.sendKeys(Keys.DOWN).build().perform();
-			//logger.info("Text in list:"+w.getText());
 			if(w.getText().contains(itemname)){
+				selected = true;
+				actions.sendKeys(Keys.ENTER).build().perform();
+				test.log(LogStatus.PASS,"Selected "+" "+itemname+" "+"in list");
 				break;
 			}
+
 		}
 		actions.sendKeys(Keys.ENTER).build().perform();
+		selected = true;
+		return selected;
 
 	}
 
 	public void selectFirstItemFromList(T elementList){
+		List<WebElement> items = getWebElementList(elementList);
 		try {
-			List<WebElement> items = getWebElementList(elementList);
 			items.get(0).click();
 
 		}catch(Exception e){
-			test.log(LogStatus.FAIL, "Could not select first from list" + test.addScreenCapture(addScreenshot()));
+			items.get(0).click();
+
 		}
 	}
 	public void selectAnItemFromList(T list, T element, String val) throws Exception{
@@ -277,7 +300,7 @@ public class BasePage <T extends InitPageElement> {
 		try {
 			logger.info("Inside selectItemFromAlist ");
 			List<WebElement>itemlist = getWebElementList(element);
-		//	wait.until(ExpectedConditions.visibilityOf(itemlist.get(0)));
+			//	wait.until(ExpectedConditions.visibilityOf(itemlist.get(0)));
 			for(WebElement li:itemlist){
 				logger.info("Text of li is:"+li.getText());
 				if(li.getText().equalsIgnoreCase(itemname)){
@@ -366,22 +389,29 @@ public class BasePage <T extends InitPageElement> {
 			throw e;
 		}
 	}
-
+	public void clearTextBox(T element){
+		we = getWebElement(element);
+		try {
+			logger.info("Clearing text box");
+			we.clear();
+		}catch(Exception e) {
+			waitForVisibilityOfElement(element);
+			we.clear();
+		}
+	}
 	public void inputText(T element,String value)  {
+		we = getWebElement(element);
 		try {
 			logger.info("Inside inputText to enter "+value);
-			we = getWebElement(element);
-			we.click();
 			we.clear();
 			we.sendKeys(value);
 			//wait.until(ExpectedConditions.textToBePresentInElement(we,value));
 			test.log(LogStatus.PASS, " Enter Text", "Entered value  " + value + " in " + element+" field");
 		}catch(Exception e) {
+			waitForVisibilityOfElement(element);
+			we.sendKeys(value);
 			logger.debug("Could not enter text",e);
 			//logger.error("Error in input text:" + e.toString());
-			test.log(LogStatus.FAIL, "Could not enter text" + test.addScreenCapture(addScreenshot()));
-			test.log(LogStatus.ERROR, printError(e,3));
-			throw e;
 		}
 	}
 
@@ -401,8 +431,8 @@ public class BasePage <T extends InitPageElement> {
 		}catch(Exception e) {
 			waitForVisibilityOfElement(element);
 		}
-			JavascriptExecutor js= (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView(true);", we);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", we);
 	}
 	public void clickByActions(T element,String val) throws Exception {
 		wait(1);
@@ -441,32 +471,25 @@ public class BasePage <T extends InitPageElement> {
 	public void
 	clickButton(T element)  {
 		//waitForVisibilityOfElement(element);
-
+		we = getWebElement(element);
 		try {
-			we = getWebElement(element);
-			System.out.println("Element foud");
 			we.click();
 			test.log(LogStatus.PASS, "Click element", "Clicked  " + element);
+			logger.info("Clicked element:"+element);
 		}
 		catch(ElementClickInterceptedException e) {
-			//	JavascriptExecutor js= (JavascriptExecutor) driver;
-			wait.until(ExpectedConditions.visibilityOf(we));
-			we.click();
-
-		}
-		catch(ElementNotInteractableException e) {
 			JavascriptExecutor js= (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", we);
-			wait.until(ExpectedConditions.visibilityOf(we));
-			we.click();
+
 
 		}
 		catch(Exception e) {
-			logger.info("Could not click element",e);
-			test.log(LogStatus.FAIL, "Could not click element" + test.addScreenCapture(addScreenshot()));
-			test.log(LogStatus.ERROR, printError(e,3));
-			throw e;
+			wait.until(ExpectedConditions.visibilityOf(we));
+			we.click();
+			logger.debug("Failed to click:",e);
+
 		}
+
 	}
 	public void navigateToHomePage() {
 		driver.findElement(By.xpath("//li[@id='homeLink']"));
@@ -481,7 +504,7 @@ public class BasePage <T extends InitPageElement> {
 			}
 
 		}catch(Exception e){
-         logger.debug("Error warning not found");
+			logger.debug("Error warning not found");
 		}
 		return isPresent;
 	}
@@ -506,16 +529,19 @@ public class BasePage <T extends InitPageElement> {
 			throw e;
 		}
 	}
-	public void waitForInvisibilityOfElement() {
-
+	public boolean waitForInvisibilityOfElement(T element) {
+		we = getWebElement(element);
 		try {
-			By byelement = By.xpath("//div[@class='sbi2-success-popup-msg']");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(byelement));
-		} catch (Exception e) {
-			test.log(LogStatus.FAIL, printError(e,3));
-			logger.error("Success popup still visible after wait time", e);
-			throw e;
-		}
+			while(we.isDisplayed()){
+				wait(1);
+			}
+			logger.info("imagae not displayed");
+			return true;
+		} catch (NoSuchElementException e) {
+			return true;
+		} catch (StaleElementReferenceException e) {
+		return true;
+	    }
 	}
 	public void waitForVisibilityOfSuccessMessage() {
 
@@ -547,7 +573,7 @@ public class BasePage <T extends InitPageElement> {
 			throw e;
 		}
 	}
-    public void waitForTheVisibility(WebElement we){
+	public void waitForTheVisibility(WebElement we){
 		wait.until(ExpectedConditions.visibilityOf(we));
 	}
 	public void waitForVisibilityOfElement(T element)  {
@@ -623,17 +649,17 @@ public class BasePage <T extends InitPageElement> {
 	public void waitAndClick(T element,String dynamicVal)  {
 		waitForVisibilityOfElement(element,dynamicVal);
 		//try {
-			we = getWebElement(element,dynamicVal);
-			try {
-				we.click();
-				test.log(LogStatus.PASS, "Click element", "Clicked  " + element);
-			}catch(Exception e) {
-				logger.info("Error in click:" ,e);
-				test.log(LogStatus.FAIL, "Could not click element" +" "+dynamicVal+ test.addScreenCapture(addScreenshot()));
-				test.log(LogStatus.ERROR, printError(e,3));
-				throw e;
-			}
+		we = getWebElement(element,dynamicVal);
+		try {
+			we.click();
+			test.log(LogStatus.PASS, "Click element", "Clicked  " + element);
+		}catch(Exception e) {
+			logger.info("Error in click:" ,e);
+			test.log(LogStatus.FAIL, "Could not click element" +" "+dynamicVal+ test.addScreenCapture(addScreenshot()));
+			test.log(LogStatus.ERROR, printError(e,3));
+			throw e;
 		}
+	}
 
 
 	public void test(){
@@ -785,10 +811,15 @@ public class BasePage <T extends InitPageElement> {
 		wait(1);
 	}
 
-	public void scrollDown300() throws Exception {
-		javascript.executeScript("window.scrollBy(0,300)", "");
-		wait(2);
-		test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+
+	public void scrollDown300()  {
+		try {
+			javascript.executeScript("window.scrollBy(0,300)", "");
+		}catch(Exception e){
+			logger.debug("Could not scroll by 300:",e);
+			throw e;
+		}
+
 	}
 
 	public void scrollToTop() {
@@ -811,9 +842,8 @@ public class BasePage <T extends InitPageElement> {
 		actions.perform();
 	}
 
-	public void scrollDownToElement(T element) throws Exception {
+	public void scrollDownToElement(T element)  {
 		actions.moveToElement(getWebElement(element)).perform();
-
 	}
 	public void scrollDownToElement(T element, String val)  {
 		try {

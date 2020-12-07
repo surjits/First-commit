@@ -3,6 +3,7 @@ package com.splashbi.pageobject.admin.setup;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.splashbi.pageobject.BasePage;
+import com.splashbi.pageobject.admin.AdminPage;
 import com.splashbi.pageobject.admin.UsersPage;
 import com.splashbi.utility.Constant;
 import com.splashbi.utility.Utility;
@@ -14,7 +15,7 @@ import static com.splashbi.pageelement.admin.UserPageElement.SEARCH_USER;
 import static com.splashbi.pageelement.admin.UserPageElement.USER_HOME_PAGE;
 import static com.splashbi.pageelement.admin.setup.UserGroupPageElement.*;
 
-public class UserGroupPage extends BasePage {
+public class UserGroupPage extends AdminPage {
     String usergroup_name="";
     Logger logger = Logger.getLogger(UsersPage.class);
 
@@ -50,7 +51,7 @@ public class UserGroupPage extends BasePage {
     }
 
     public void addAnyUserToGroup(String usergroup) {
-        //try {
+
             if (!getTextValue(SEARCHED_USERGROUP).contains("usergroup")) {
                 inputText(SEARCH_USER_GROUP, usergroup);
                 hitEnterKey(SEARCH_USER_GROUP);
@@ -65,11 +66,8 @@ public class UserGroupPage extends BasePage {
             clickButton(SELECTED_EMPLOYEE_BUTTON);
             clickButton(SAVE_USERGROUP);
             waitForVisibilityOfElement(VERIFY_SUCESS);
-       /* } catch (Exception e) {
-            test.log(LogStatus.FAIL,"Failed at add user");
-            test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
-        }*/
-    }
+            waitForInvisibilityOfSuccessPopup();
+        }
     public boolean isUserPresentInGroup(String group) {
         boolean isPresent = false;
         try {
@@ -105,7 +103,7 @@ public class UserGroupPage extends BasePage {
         boolean isCreated = false;
         waitForVisibilityOfElement(SEARCH_USER_GROUP);
         inputText(SEARCH_USER_GROUP, usergroup);
-        //hitEnterKey(SEARCH_USER);
+        waitForVisibilityOfElement(SEARCHED_USERGROUP);
         if (isElementDisplayed(SEARCHED_USERGROUP)) {
             isCreated = true;
             test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));

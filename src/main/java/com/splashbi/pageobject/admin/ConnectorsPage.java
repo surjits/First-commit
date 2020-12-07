@@ -57,14 +57,42 @@ public class ConnectorsPage extends BasePage {
         }
 
     }
-    public boolean isConnectorSavedSuccessfully() throws Exception{
+
+    public void checkStatusByEdit(String connector_name, String password){
+        inputText(SEARCH_CONNECTOR,connector_name);
+        hitEnterKey(SEARCH_CONNECTOR);
+        if(!isElementDisplayed(CONNECTOR,connector_name)){
+            test.log(LogStatus.FAIL,"Connector not found");
+        }
+        clickButton(EDIT_CONNECTOR);
+        waitForVisibilityOfElement(CONNECTOR_TAB,connector_name);
+        inputText(CONNECTION_PASSWORD, password);
+        testAndSaveConnector();
+    }
+    public boolean isStatusCheckedForAllConnectors(){
+        boolean isChecked = false;
+        clickButton(CHECK_STATUS_OF_ALL_CONNECTORS);
+        waitForInvisibilityOfElement(STATUS_CHECK_LOADER_IMG);
+        if(getListSize(LIST_OF_VALID_CONNECTORS)>0 || getListSize(LIST_OF_INVALID_CONNECTORS)>0) {
+            isChecked = true;
+            test.log(LogStatus.PASS, "Total valid connectors: " + getListSize(LIST_OF_VALID_CONNECTORS));
+            test.log(LogStatus.PASS, "Total invalid connectors: " + getListSize(LIST_OF_INVALID_CONNECTORS));
+            test.log(LogStatus.PASS, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+        }
+        else{
+            test.log(LogStatus.FAIL, "Status check not successfull");
+        }
+        return isChecked;
+    }
+    public boolean isConnectorSaved(){
         if(getTextValue(CONNECTOR_SAVE_SUCCESS_POPUP).contains("Database Connector saved successfully.")){
-            // test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
             test.log(LogStatus.PASS,"Connector saved successfully");
+            test.log(LogStatus.PASS, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
             return true;
         }
         else{
             test.log(LogStatus.FAIL,"Connection is not saved");
+            test.log(LogStatus.FAIL, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
             return false;
         }
 
@@ -79,6 +107,18 @@ public class ConnectorsPage extends BasePage {
             return isElementDisplayed(CONNECTOR_TAB, connector_name);
         }
     }
+    public void testAndSaveConnector(){
+        clickButton(CREATE_CONNECTOR_TEST);
+        waitForInvisibilityOfLoader();
+        waitForVisibilityOfSuccessMessage();
+        waitForInvisibilityOfSuccessPopup();
+        clickButton(CREATE_CONNECTOR_SAVE);
+        waitForInvisibilityOfLoader();
+        if(isErrorPresent()){
+            test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+            test.log(LogStatus.FAIL,"Connector creation failed");
+        }
+    }
 
     /******* Create a New DB Connector *************/
     public String createDBConnector(Hashtable<String, String> data) {
@@ -91,16 +131,7 @@ public class ConnectorsPage extends BasePage {
                 waitForVisibilityOfElement(VERIFY_CREATE_CONNECTOR);
                 fillDBConnectorDetails(connector_name, data);
             }
-            clickButton(CREATE_CONNECTOR_TEST);
-            waitForInvisibilityOfLoader();
-            waitForVisibilityOfSuccessMessage();
-            waitForInvisibilityOfSuccessPopup();
-            clickButton(CREATE_CONNECTOR_SAVE);
-            waitForInvisibilityOfLoader();
-            if(isErrorPresent()){
-                test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
-                test.log(LogStatus.FAIL,"Connector creation failed");
-            }
+            testAndSaveConnector();
             waitForVisibilityOfSuccessMessage();
             waitForVisibilityOfElement(CONNECTOR_HOME);
         }catch(Exception e){
@@ -127,13 +158,9 @@ public class ConnectorsPage extends BasePage {
         try {
             inputText(CONNECTOR_NAME, connector_name);
             clickButton(SYSTEM_TYPE_LIST);
-           // selectFromlistByKeyAction(SYSTEM_TYPE_LIST,data.get("system_type"));
             selectItemFromAlist(SYSTEM_ITEM_LIST, data.get("system_type"));
-            //clickButton(SYSTEM_TYPE,data.get("system_type"));
             if(!getTextValue(CONNECTION_TYPE_VALUE).equalsIgnoreCase(data.get("connection_type"))){
                 selectFromlistByKeyAction(CONNECTION_TYPE_LIST,data.get("connection_type"));
-                //clickButton(CONNECTION_TYPE_LIST);
-               // clickButton(CONNECTION_TYPE, data.get("connection_type"));
             }
             inputText(HOST_NAME, data.get("hostname"));
             inputText(SID, data.get("sid"));

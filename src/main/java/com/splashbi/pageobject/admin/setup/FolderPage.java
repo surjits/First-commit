@@ -3,15 +3,18 @@ package com.splashbi.pageobject.admin.setup;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.splashbi.pageobject.BasePage;
+import com.splashbi.pageobject.admin.AdminPage;
 import com.splashbi.pageobject.admin.UsersPage;
 import com.splashbi.utility.Utility;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+
+import static com.splashbi.pageelement.admin.ERPMappingPageElement.SEARCH_USER_MAPPING;
 import static com.splashbi.pageelement.admin.setup.FolderPageElement.*;
 import static com.splashbi.pageelement.DynamicPageElement.*;
 import static com.splashbi.pageelement.admin.setup.UserGroupPageElement.*;
 
-public class FolderPage extends BasePage {
+public class FolderPage extends AdminPage {
     String folder_name="";
     Logger logger = Logger.getLogger(UsersPage.class);
 
@@ -28,7 +31,7 @@ public class FolderPage extends BasePage {
 
     }
     public boolean isFolderPageOpen(){
-        if(isElementDisplayed(VERIFY_FOLDER_HOME)){
+        if(isElementDisplayed(FOLDER_HOME)){
             return true;
         }
         else{
@@ -42,22 +45,18 @@ public class FolderPage extends BasePage {
         waitForVisibilityOfElement(CREATE_FOLDER_PAGE);
         inputText(FOPLDER_NAME_FIELD,folder_name);
         wait(1);
-       // clickButton(BUSINESS_APP_LIST);
         selectFromlistByKeyAction(BUSINESS_APP_LIST,businessApp);
-       // selectItemFromAlist(BUSINESS_APP_NAME_LIST,businessApp);
-       // selectFirstItemFromList(BUSINESS_APP_NAME_LIST);
-
-       //waitAndClick(BUSINESS_APP_NAME,businessApp);
         clickButton(SAVE_FOLDER);
         waitForInvisibilityOfLoader();
         waitForVisibilityOfSuccessMessage();
+        waitForInvisibilityOfSuccessPopup();
         return folder_name;
     }
     public boolean verifyFolder(String folderName) {
         boolean isPresent = false;
-        waitForVisibilityOfElement(VERIFY_FOLDER_HOME);
+        waitForVisibilityOfElement(FOLDER_HOME);
         inputText(SEARCH_FOLDER, folderName);
-        //hitEnterKey(SEARCH_USER);
+        waitForVisibilityOfElement(FOLDER_SEARCHED);
         if (isElementDisplayed(FOLDER_SEARCHED)) {
             isPresent = true;
             test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
@@ -68,6 +67,34 @@ public class FolderPage extends BasePage {
             test.log(LogStatus.FAIL, "Folder creation failed", folderName + " " + "not created");
         }
         return isPresent;
+    }
+    public boolean isEditFolderOpen(String folderName){
+        inputText(SEARCH_FOLDER,folderName);
+        if (!isElementDisplayed(FOLDER_SEARCHED)){
+            clearTextBox(SEARCH_FOLDER);
+            hitEnterKey(SEARCH_FOLDER);
+            clickButton(FIRST_FOLDER_INFO);
+        }else{
+            clickButton(FOLDER_INFO);
+        }
+        waitForVisibilityOfElement(EDIT_FOLDER);
+        clickButton(EDIT_FOLDER);
+        waitForVisibilityOfElement(EDIT_FOLDER_WINDOW);
+        if(isElementDisplayed(EDIT_FOLDER_WINDOW)){
+            test.log(LogStatus.PASS, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+            test.log(LogStatus.PASS, "Edit Folder window is open");
+            return true;
+        }else{
+            test.log(LogStatus.FAIL, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+            test.log(LogStatus.FAIL, "Edit Folder window not open");
+            return false;
+        }
+    }
+    public void openEditFolderWindow(String folderName){
+        inputText(SEARCH_FOLDER, folderName);
+        waitForVisibilityOfElement(FOLDER_SEARCHED);
+        clickButton(FOLDER_INFO);
+        clickButton(EDIT_FOLDER);
     }
 
 }

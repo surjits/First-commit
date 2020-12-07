@@ -49,11 +49,24 @@ public enum UserPageElement implements InitPageElement {
     DISTRIBUTION_BURSTING_PRIVILEGE(getValueFromPropFile("distribution_bursting")),
     DISTRIBUTION_REPORTSET_PRIVILEGE(getValueFromPropFile("distribution_publishing")),
 
-    SAVE_USER_EDIT(getValueFromPropFile("user_edit_save")),
+    SAVE_USER_EDIT(getValueFromPropFile("user_setting_save")),
     SAVE_NEXT_USER_EDIT(getValueFromPropFile("user_edit_save_next")),
     SAVE_USER_GROUP(getValueFromPropFile("save_user_group")),
     USER_DETAILS_TAB(getValueFromPropFile("user_details")),
-
+    /***************Sanity case***/
+    MORE_ACTION(getValueFromPropFile("more_action")),
+    EXPORT_USER_TEMPLATE_WITH_DATA(getValueFromPropFile("export_users_template_with_data")),
+    SELECT_EXPORT_OPTION(getValueFromPropFile("select_to_rexport_option")),
+    OPTION_USERS(getValueFromPropFile("option_users")),
+    EXPORT_BUTTON(getValueFromPropFile("export_button")),
+    ACTION_BUTTON(getValueFromPropFile("action")),
+    USER_EDIT(getValueFromPropFile("user_edit")),
+    LANGUAGE_LIST_IN_SETTING(getValueFromPropFile("language_list_in_setting")),
+    LANGUAGE_FIELD_IN_USER_BASICS(getValueFromPropFile("language_field_in_basic_details")),
+    LANGUAGE_LISTBOX_IN_USER_BASICS(getValueFromPropFile("language_list_in_basic_details")),
+    SAVE_BUTTON_IN_BASIC_DETAILS(getValueFromPropFile("save_button_in_basic_details")),
+    EDIT_USER_SAVE_NEXT(getValueFromPropFile("edit_user_savenext")),
+    EDIT_USER_WINDOW(getValueFromPropFile("edit_user_window")),
     END(getValueFromPropFile("end"));
     private String loc;
     public String expression;

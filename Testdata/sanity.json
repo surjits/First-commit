@@ -1,0 +1,2418 @@
+{
+	"createMultipleFilter": [
+		{
+			
+			"Run": "Yes",
+			"bussinessApp": "autoBusinessApplication",
+			"dbconnector": "automationConnection",
+			"Tablename": "Ms_Products",
+			"Filter1":"Movie Name",
+			"Filter2":"Product Type",
+			"text1":"MOVIE_NAME = 'The Dark Tower'",
+			"text2":"PRODUCT_TYPE = 'Movie'"
+			
+		}
+	],
+
+	"exportUserMapping": [
+		{
+			"Run": "Yes"
+
+		}
+	],
+	"GenRepDelReptWidgets": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"CopyReportName": "GenRepDelReptWidgets"
+		}
+	],
+	"ReportImport": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"FilePath": "\\resources\\1099_invoice.zip",
+			"expectedvalue": "Report(s) Imported Successfully."
+		}
+	],
+	"ReportShareWithoutEditEnable": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUserName": "seleniumUser",
+			"ReportName": "automationReport",
+			"Users": "seleniumUser"
+		}
+	],	
+	"TestCase_010": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"BusinessApplication": "Business010"
+		}
+	],
+	"ConnectionDetails": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ConnectionName": "Oracle EBS",
+			"ConnectionPassword": "apps"
+		}
+	],
+	"ImportEbsUser": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"Connectionname": "Oracle EBS",
+			"AuthenticationMethod": "EBS",
+			"EBSUser": "AALVI",
+			"EmpName": "Alvi, Mrs. Arianna"
+		}
+	],
+	"surjitUserCreate": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUser": "autoUserCreate",
+			"NewPass": "welcome@123",
+			"Fname": "Test",
+			"Lname": "testing14",
+			"email": "govardhan.karnati@eistech.com",
+			"changePwd": "Test123",
+			"defaultView": "By Grid"
+		}
+	],
+	"CA_CREATE_006": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "clientsurjitWithoutContent6",
+			"Defaultsurjit": "defsurjitWithoutContent6",
+			"NewPassword": "welcome@1231"
+		}
+	],
+	"CA_CREATE_005": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "clientsurjitWithContent5",
+			"Defaultsurjit": "defsurjitWithContent5",
+			"NewPassword": "welcome@1231",
+			"MasterClient": "Splash Default Client",
+			"DomainName": "TestImportContentDomain"
+		}
+	],
+	"CA_CREATE_007": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "clientsurjitWithContent7",
+			"Defaultsurjit": "defsurjitWithContent7",
+			"NewPassword": "welcome@1231",
+			"DefaultsurjitUserName": "MyTestsurjit",
+			"FirstName": "test",
+			"LastName": "testing",
+			"Email": "test@testmail.com"
+		}
+	],
+	"CA_CREATE_008": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "clientsurjitWithoutContent",
+			"Defaultsurjit": "defsurjitWithoutContent",
+			"NewPassword": "welcome@1232"
+		}
+	],
+	"CA_CREATE_001": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "automationClientNew2",
+			"Defaultsurjit": "automationClientAdm",
+			"sucessMessage": "Client updated successfully",
+			"clientPassword": "welcome@123@Splash1"
+		}
+	],
+	"CA_CREATE_002": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "Splash Default Client1",
+			"Defaultsurjit": "surjit",
+			"ErrorMessage": "Default surjit already exists.",
+			"clientPassword": "welcome@123@Splash1"
+		}
+	],
+	/* govardhan*/
+	"CA_CREATE_003": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "autoClient_003",
+			"Defaultsurjit": "autoClientAdm003",
+			"sucessMessage": "Client updated successfully",
+			"TotalUsers": "2",
+			"MobileUsers": "0",
+			"ExcelConnUsers": "2",
+			"surjitUsers": "2",
+			"Developers": "2",
+			"DBConnectors": "1",
+			"clientPassword": "welcome@123@Splash1"
+		}
+	],
+	"CA_CREATE_004": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "autoClient_004",
+			"Defaultsurjit": "autoClientAdm004",
+			"ErrorMessage": "Client updated successfully",
+			"TotalUsers": "2",
+			"MobileUsers": "2",
+			"ExcelConnUsers": "2",
+			"surjitUsers": "2",
+			"Developers": "2",
+			"DBConnectors": "1",
+			"clientPassword": "welcome@123@Splash1"
+		}
+	],
+	"TC_CA_023": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "MyTestingClient_023",
+			"Defaultsurjit": "MyTestingDefsurjit_023",
+			"SettingName": "Minimum Number of Password Characters Length",
+			"NewPassword": "welcome@1231",
+			"SettingValue": "5"
+		}
+	],
+	"TC_USR_15": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"SearchUser": "automationUser",
+			"userid": "automationUser",
+			"currentSettings": "Report,Dashboard",
+			"UserName1": "automationUser",
+			"Password1": "welcome@123",
+			"reportName": "Bank",
+			"Reportname": "automationReport",
+			"SearchDashboard": "surjit Dashboard",
+			"DashboardName": "automationDashboard",
+			"shareUser": "automationUser",
+			"user": "automationUser",
+			"CopydashboardName": "surjit Dashboard",
+			"businessApp": "Splash surjitistrator"
+		}
+	],
+	"DOM_NEWFOLDER_03": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Dom",
+			"BusinessApplication": "Splash surjitistrator",
+			"Folder": "tfol",
+			"Connection": "splash_demos"
+		}
+	],
+	"DomainCreateWithDrillQuery": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Test_Domain555",
+			"BusinessApplication": "Splash Samples",
+			"Connection": "splash_demos",
+			"TableName": "MS_PRODUCTS",
+			"MovedTable": "Ms Products"
+		}
+	],
+	"DomainCreatewithoutMandatory": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123"
+		}
+	],
+	"Edit_TestCase": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain"
+		}
+	],
+	"DomainExport": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Products"
+		}
+	],
+	"DomainGridDelete": [
+		{			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Dom",
+			"BusinessApplication": "Splash surjitistrator",
+			"Connection": "splash_demos",
+			"Validation": "Domain(s) deleted successfully"
+		}
+	],
+	"ListDelete": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "DomainListDeleteFirefox",
+			"BusinessApplication": "Splash surjitistrator",
+			"Connection": "splash_demos",
+			"Validation": "Domain(s) deleted successfully"
+		}
+	],
+	"Domaindelete": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomainDeleteFirefox",
+			"BusinessApplication": "Splash surjitistrator",
+			"Connection": "splash_demos",
+			"Validation": "Domain(s) deleted successfully"
+		}
+	],
+	"AddObjectsToCreateDomain": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"ConnectionName": "splash_demos",
+			"SchemaName": "splash_demos404",
+			"SearchObjects": "MS_PRODUCTS"
+		}
+	],
+	"ChangeDomainOwner": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"Title": "change owner",
+			"NewOwner": "automationUser",
+			"CurrentOwner": "automationUser"
+		}
+	],
+	"DomainLOV": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"LOVName": "Testing LOV",
+			"LOVType": "Query",
+			"LOVQuery": "SELECT CITY,REGION FROM MS_STORES"
+		}
+	],
+	"DomainCreateExcelTable": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"FilePath": "\\resources\\Cars_Customers.xlsx",
+			"ConnectionName": "splash_demos"
+		}
+	],
+	"CreateLOVGlobalYes": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"LOVName": "GLOV",
+			"LOVType": "Query",
+			"Global": "Yes",
+			"DisplayType": "Drop Down",
+			"ConnectionName": "splash_demos",
+			"FilterBY": "Global LOV",
+			"SqlQuery": "SELECT  orderQuarter, quantityOrdered FROM cars_order_details"
+		}
+	],
+	"CreateLOVTestcase": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"LOVName": "Local_LOV1123",
+			"LOVType": "Query",
+			"Global": "No",
+			"DisplayType": "Drop Down",
+			"ConnectionName": "splash_demos",
+			"SqlQuery": "SELECT orderQuarter, quantityOrdered FROM cars_order_details"
+		}
+	],
+	"DomainCreate": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "autoDomain3",
+			"BusinessApplication": "Splash surjitistrator",
+			"Connection": "splash_demos"
+		}
+	],
+	"Domains": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123"
+		}
+	],
+	"DomainImport": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"FilePath": "\\resources\\testing_testing_surjit.zip",
+			"DomainName": "testing"
+		}
+	],
+	"DomainsSubmit": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales"
+		}
+	],
+	"DomainSaveValidation": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123"
+		}
+	],
+	"DomainShare": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"ShareUser": "automationUser"
+		}
+	],
+	"DomainShareWithoutEdit": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"ShareUser": "seleniumUser"
+		}
+	],
+	"DomainTableCopy": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales"
+		}
+	],
+	"DomainTabledelete": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "testxx123xx",
+			"TableConnection": "splash_demos",
+			"TableQuery": "select * from MS_STORES"
+		}
+	],
+	"TableFilters": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"DragOption": "Product Key",
+			"FreeText": "\"text\""
+		}
+	],
+	"TableFiltersFreeText": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"DragOption": "Product Key",
+			"ViewName": "Ms Products",
+			"FreeText": "\"text\""
+		}
+	],
+	"DomainTableJoin": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"ColumnName": "Product Key"
+		}
+	],
+	"TC_DOM_CRJ_019": [
+		{
+			"UserName": "surjit",
+			"UserName1": "automationUser",
+			"Password": "welcome@123",
+			"DomainName1": "S Domain",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_SALES",
+			"TableName": "Ms Sales",
+			"MasterCol": "Product Key",
+			"DomainName2": "automationDomain",
+			"ChildTable": "Ms Products",
+			"ChildColumn": "Brand",
+			"ReportName": "TC_DOM_CRJ_019",
+			"DomainNamesList": "S Domain,",
+			"MasterTableList": "Ms Sales,",
+			"ChildTableList": "Ms Products,"
+		}
+	],
+	"TC_DOM_TABLE_FILTERS_015": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain15",
+			"BusinessApplication": "Oracle E-Business Suite",
+			"DefaultDatabaseConnector": "Oracle EBS",
+			"TableName": "eis_ascp_demand_schedule_v",
+			"TableName1": "eis ascp demand schedule v",
+			"ColumnName": "Schedule Name"
+		}
+	],
+	"TC_DOM_TABLEFILTERS_036": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationdomain",
+			"TableName": "Ms Stores",
+			"columnname": "Movie Name",
+			"option": "Between",
+			"value": "1",
+			"value2": "5",
+			"Filter1": "Store Key",
+			"data": "1,2,3,4,5"
+		}
+	],
+	"TC_DOM_TABLE_FILTERS_014": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "TFilt",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"Search Tablename": "Ms_Products",
+			"TableName": "Ms Products",
+			"Filter1": "Movie Name",
+			"Filter2": "Product Type",
+			"ReportName": "FiltRep",
+			"ColumnName": "Movie Name",
+			"ViewSQL1": "MOVIE_NAME = 'The Dark Tower'",
+			"ViewSQL2": "PRODUCT_TYPE = 'Movie'",
+			"freeText1": "MOVIE_NAME = 'The Dark Tower'",
+			"freeText2": "PRODUCT_TYPE = 'Movie'"
+		}
+	],
+	"TC_DOM_CRJ_012": [
+		{
+			
+			"UserName": "surjit",
+			"ShareUser": "automationUser",
+			"Password": "welcome@123",
+			"DomainName1": "DomainV12",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableName1": "cars_order_details",
+			"DomainName2": "DomainV112",
+			"TableName2": "cars_customers",
+			"MasterCol": "Customer Id",
+			"SearchTableName1": "cars order details",
+			"SearchTableName2": "cars customers"
+		}
+	],
+	"TC_DOM_SHARE_001": [
+		{
+			
+			"UserName": "surjit",
+			"UserName1": "automationUser",
+			"Password": "welcome@123",
+			"DomainName": "DOM_SHARE_001",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_STORES",
+			"TableName": "Ms Stores",
+			"shareDomainText": "Share Domain"
+		}
+	],
+	"TC_DOM_SHARE_011": [
+		{
+			
+			"UserName": "surjit",
+			"UserName1": "automationUser",
+			"Password": "welcome@123",
+			"DomainName1": "DOM_SHARE_011_1",
+			"DomainName2": "DOM_SHARE_011_2",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "Oracle EBS",
+			"TableSourceName": "BOM_BILL_OF_MATERIALS",
+			"TableName": "BOM_BILL_OF_MATERIALS",
+			"domainSharedSuccessfullyMsg": "Domains shared successfully"
+		}
+	],
+	"Generatedreportdelete": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"CopyReportName": "AutomationReport-Copy30"
+		}
+	],
+	"PreviewData": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"SearchText": "Sales",
+			"ReportName": "AutomationReport",
+			"option": "Preview Data"
+		}
+	],
+	"ReportDrillSetBasedDrilldown": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "DrillBasedReport",
+			"ColumnName": "Region",
+			"DrillSet": "Stores Information",
+			"ReportColumnFilter": "Store Key",
+			"DrillColumnFilter": "Store Key",
+			"DomainName": "Movie Sales",
+			"TableName": "Stores"
+		}
+	],
+	"ReportEditCopy": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport"
+		}
+	],
+	"ReportsCreateReportSet": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportSetName": "automationReportSet7",
+			"BusinessApplicationName": "Splash Samples",
+			"FolderName": "Automation"
+		}
+	],
+	"CalculationColumn": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"CalculationColumn": "autoCalColumn1",
+			"Formula": "UPPER( \"Product Key\" )",
+			"NewReportName": "TestCalCol"
+		}
+	],
+	"emailInEdit": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "automationReport",
+			"EmailAddress": "govardhan.karnati@splashbi.com",
+			"NewUser": "automationUser",
+			"UserGroupName": "automationUserGroup"
+		}
+	],
+	"ReportsSubmit": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "ACA Plan Setup"
+		}
+	],
+
+	"ReportFilterSubmit": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"ReportName1": "AutomationReport-Copy",
+			"ColumnName": "Sale Units",
+			"SpecificValue": "System Variable"
+		}
+	],
+	"EditReportSet": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123"			
+		}
+	],
+	"ReportsPivotEdit_TC_46": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"Column1": "Product Key",
+			"Column2": "Movie Name",
+			"Column3": "Full Description",
+			"Column4": "Product Type"
+		}
+	],
+	"DFF_Report_Submit": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "Add DFF Columns To Views Process",
+			"ConnectionName": "Oracle EBS",
+			"ParamName": "Splash Business Area",
+			"ParamValue": "Oracle E-Business Suite"
+		}
+	],
+	"KFF_Report_Submit": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "Add KFF Segments to Views Process",
+			"ConnectionName": "Oracle EBS",
+			"ParamName": "business app",
+			"ParamValue": "India",
+			"chartofACName": "ADB Holdings Accounting Flex"
+		}
+	],
+	"CopyReportTestcase": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "automationReport"
+		}
+	],
+	"ReportRun": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "ACA Plan Setup"
+		}
+	],
+	"ReportCreate": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"ColumnName": "Sales Id",
+			"ReportName": "AutoReportCreateFF",
+			"BusinessApp": "Oracle E-Business Suite"
+		}
+	],
+	"FavoriteReportData": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"SearchText": "Sales",
+			"ReportName": "Sales Order Transactions"
+		}
+	],
+	"ReportShareWithEditEnable": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUserName": "automationUser",
+			"ReportName": "automationReport",
+			"Users": "automationUser"
+		}
+	],
+	"ReportShareWithEditUserGroup": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"UserGroupName": "automationUserGroup",
+			"NewUserName": "automationUser"
+		}
+	],
+	"ReportShareWithOutEditUserGroup": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"UserGroupName": "automationUserGroup",
+			"NewUserName": "automationUser"
+		}
+	],
+	"ReportsPivotEdit": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "automationReport"
+		}
+	],
+	"ReportShareResponsibility": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "1099 Invoice Exceptions",
+			"Responsibility": "Payables Manager",
+			"NewUserName": "automationUser",
+			"errorMessage": "Please select at least one Report."
+		}
+	],
+	"ResubmitGeneratedReports": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "automationReport"
+		}
+	],
+	"ResubmitReport": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport"
+		}
+	],
+	"RunReportSet": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportsetName": "AutomationReportSet"
+		}
+	],
+	"RunEBSReport": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "Account Code Listing",
+			"ParamName": "Account Type",
+			"ParamValue": "Asset",
+			"DisplayType": "dropdown",
+			"ResponsibilityName": "Payables Manager"
+		}
+	],
+	"RunNonEBSReport": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "Car Sales",
+			"ParamName": "Invoice Number From",
+			"ParamValue": "Food and beverage ",
+			"DisplayType": "TB"
+		}
+	],
+	"ReportSchedule": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"StartTime": "01/05/2030 20",
+			"Minutes": "52",
+			"Seconds": "28"
+		}
+	],
+	"ReportScheduleRepeat": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"StartTime": "01/05/2025 19",
+			"Minutes": "32",
+			"Seconds": "58",
+			"RepeatType": "Minutes",
+			"EndTime": "01/06/2025 16",
+			"Interval": "30"
+		}
+	],
+	"ReportTerminate": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "autoReportTerminate",
+			"TableName": "testReportTerminate",
+			"ConnectorName": "Oracle EBS",
+			"DomainName": "autoDomainOrcleEBS",
+			"SQLQuery": "select ppf.employee_number, ppf.last_name,ppf.email_address, ppf.first_name, ppf.nationality,ppf.full_name, paf.assignment_number, ppf.effective_start_date, ppf.effective_end_date,ppf.start_date, ppf.date_of_birth, ppf.marital_status,paf.Business_group_id,paf.grade_id,paf.position_id, paf.job_id from per_all_people_f ppf, per_all_assignments_f paf where ppf.business_group_id=paf.business_group_id and Rownum <= 8000000"
+		}
+	],
+	"GeneratedReportTerminate": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "autoReportTerminate",
+			"TableName": "testGenerateReprotTErminate",
+			"ConnectorName": "Oracle EBS",
+			"DomainName": "autoDomainOrcleEBS",
+			"SQLQuery": "select ppf.employee_number, ppf.last_name,ppf.email_address, ppf.first_name, ppf.nationality,ppf.full_name, paf.assignment_number, ppf.effective_start_date, ppf.effective_end_date,ppf.start_date, ppf.date_of_birth, ppf.marital_status,paf.Business_group_id,paf.grade_id,paf.position_id, paf.job_id from per_all_people_f ppf, per_all_assignments_f paf where ppf.business_group_id=paf.business_group_id and Rownum <= 8000000"
+		}
+	],
+	"ReportColumnAscending": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"ColumnName1": "Sale Units",
+			"ColumnName2": "Sale Units",
+			"SortType": "Asce"
+		}
+	],
+	"ReportColumnDescending": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"ColumnName": "Sale Units",
+			"SortType": "Desc"
+		}
+	],
+	"EditReportOutputColAsc": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"ColumnName": "Sale Units",
+			"SortType": "Asce"
+		}
+	],
+	"EditReportOutputColDesc": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"ColumnName": "Sale Units",
+			"SortType": "Desc"
+		}
+	],
+	"ReportExcludeJoin": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"JoinOption": "Exclude",
+			"MasterTable": "Ms Sales",
+			"MasterColumn": "Product Key",
+			"ChildTable": "Ms Products",
+			"ChildColumn": "Customer Id",
+			"Join": "JOIN  splash_demos402.cars_customers cc ON (cod.`customer_Id` = cc.`customer_Id`)"
+		}
+	],
+	"ReportIncludeJoin": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"DomainName": "automationDomain",
+			"JoinOption": "Include",
+			"TableName1": "Ms Sales",
+			"TableName": "Ms Stores",
+			"ColumnName": "Sales Id",
+			"ColumnName1": "Region",
+			"join": "MS1.STORE_KEY = MS.STORE_KEY"
+		}
+	],
+	"ReportsRun": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport"
+		}
+	],
+	"TC_REP_SHR_REP_072": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUser": "Createuser72",
+			"FirstName": "ras",
+			"LastName": "jha",
+			"Email": "rashmi.jha@splashbi.com",
+			"NewUserGroup": "UserGroup72",
+			"UserGroup": "automationUserGroup",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Products",
+			"Reportname1": "MultimuleData72_new",
+			"ShareUserName": "automationuser",
+			"ShareUser2": "Createuser72",
+			"password1": "456"
+		}
+	],
+	"TC_REP_SHR_REP_024": [
+		{
+			
+			
+			"UserName1": "automationUser",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"ReportName1": "AutomationReport-Copy",
+			"UserName": "surjit"
+		}
+	],
+	"TC_REP_SHR_REP_004": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"ReportName": "report111",
+			"tableName": "Ms Sales",
+			"usersList": "automationUser"
+		}
+	],
+	"TC_REPORTSET_SHARE_011": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportSetName": "automationReportSet",
+			"value": "UnCheck",
+			"value1": "Check",
+			"role": "Report Set",
+			"TestUser": "seleniumUser",
+			"warningMessage1": "reports/reportsets does not have share permission",
+			"warningMessage2": "No Sharing Options are available. Please contact System surjitistrator.",
+			"shareUser": "automationUser"
+		}
+	],
+	"TC_DOM_CT_013": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Dom",
+			"TableName": "DEMO",
+			"BusinessApplication": "autoBusinessApplication",
+			"DefaultDatabaseConnector": "splash_demos",
+			"Search Tablename": "Demo",
+			"ChangeDomain": "Dom",
+			"Copied Table Name": "Demo-copy"
+		}
+	],
+	"TC_DOM_CT_015": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "DomainCT15",
+			"TableName": "DEMO_USERS",
+			"BusinessApplication": "Oracle E-Business Suite",
+			"DefaultDatabaseConnector": "Oracle EBS",
+			"SearchTablename": "Demo Users",
+			"Copied Table Name": "Ed Uk Contacts"
+		}
+	],
+	"TC_DOM_CRJ_021": [
+		{
+			
+			"UserName": "surjit",
+			"UserName1": "automationUser",
+			"Password": "welcome@123",
+			"DomainName1": "CrossJoinReportOutput",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_SALES",
+			"TableName": "Ms Sales",
+			"MasterCol": "Product Key",
+			"DomainName2": "automationDomain",
+			"ChildTable": "Ms Products",
+			"ChildColumn": "Brand",
+			"ReportName": "DOM_CRJ_021",
+			"DomainNamesList": "CrossJoinReportOutput",
+			"MasterTableList": "Ms Sales,",
+			"ChildTableList": "Ms Products,"
+		}
+	],
+	"TC_DOM_CRJ_061": [
+		{
+			/*author:vkuruma*/
+			
+			"UserName": "surjit",
+			"UserName1": "surjit",
+			"Password": "welcome@123",
+			"DomainName1": "DomainV1",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableName1": "cars_order_details",
+			"DomainName2": "DomainV2",
+			"TableName2": "cars_customers",
+			"MasterCol": "Customer Id",
+			"SearchTableName1": "cars order details",
+			"SearchTableName2": "cars customers"
+		}
+	],
+	"TC_DOM_TABLESHARE_009": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "TestDomain",
+			"BusinessApplication": "Oracle E-Business Suite",
+			"DefaultDatabaseConnector": "Oracle EBS",
+			"TableName": "uk_employees",
+			"TableName1": "uk_employees",
+			"ShareUser": "automationuser",
+			"SearchTablename": "Uk Employees"
+		}
+	],
+	"TC_DOM_TABLESHARE_011": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUser1": "Arjun011A",
+			"FirstName": "Yak",
+			"LastName": "kay",
+			"Email": "yak@gamil.com",
+			"DomainName": "DomainS43",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "Splash_demos",
+			"TableSourceName": "MS_STORES",
+			"Search TableName": "Ms Stores",
+			"NewUser2": "Arjun011AA",
+			"NewUser3": "Arjun011AAA"
+		}
+	],
+	"TC_DOM_TABLESHARE_018": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"userGroup1": "UG018A",
+			"User1": "automationUser",
+			"User2": "seleniumUser",
+			"FirstName": "Yak",
+			"LastName": "kay",
+			"Email": "yak@gamil.com",
+			"DomainName": "Bills of Material",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "Splash_demos",
+			"TableSourceName": "MS_STORES",
+			"Search TableName": "EIS BOM Bill Component Costs",
+			"userGroup2": "UG018AA",
+			"NewUser2": "Arvind018AA",
+			"userGroup3": "UG018AAA",
+			"NewUser3": "Arvind018AAA"
+		}
+	],
+	"TC_DOM_TABLESHARE_020": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUser1": "Arvind020A",
+			"FirstName": "Yak",
+			"LastName": "kay",
+			"Email": "yak@gamil.com",
+			"DomainName": "Domain Arvind020_S43",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "Splash_demos",
+			"TableSourceName": "MS_STORES",
+			"SearchTableName": "Ms Stores",
+			"NewUser2": "Arvind020AA",
+			"NewUser3": "Arvind020AAA",
+			"SqlTable": "SqlTable020",
+			"Query": "select * from MS_STORES"
+		}
+	],
+	"TC_DOM_TABLESHARE_022": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUser1": "Arvind022A",
+			"FirstName": "Yak",
+			"LastName": "kay",
+			"Email": "yak@gamil.com",
+			"DomainName": "Domain Arvind022_S43",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "Splash_demos",
+			"TableSourceName": "MS_STORES",
+			"SearchTableName": "Ms Stores",
+			"NewUser2": "Arvind022AA",
+			"NewUser3": "Arvind022AAA",
+			"LOV Name": "Lov022",
+			"Query": "select * from MS_STORES",
+			"LOV Type": "Query",
+			"Global": "No"
+		}
+	],
+	"TC_DOM_TABLESHARE_030": [
+		{
+			
+			
+			"surjit": "surjit",
+			"Password": "welcome@123",
+			"ShareUser": "automationUser",
+			"TableName1": "Ms Stores",
+			"DomainName": "TestDomain",
+			"BusinessApplication": "Splash Samples",
+			"FolderName": "M1",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableName": "MS_STORES",
+			"columnName": "Reports",
+			"columnName1": "City",
+			"ReportName": "TABLESHARE_Rep",
+			"UserGroupName1": "usergroup",
+			"ShareUser1": "seleniumUser",
+			"UserGroupName": "automationUserGroup",
+			"WarningMessage": "You are not authorized to run the Report"
+		}
+	],
+	"TC_DOM_TableUnshare_009": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Dom",
+			"BusinessApplication": "Oracle E-Business Suite",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableName1": "cars_customers",
+			"TableName2": "cars_employees",
+			"SearchTableName": "cars customers",
+			"userName1": "Automation User",
+			"userName2": "Selenium User",
+			"Shareduser": "automationUser"
+		}
+	],
+	"TC_DOM_TableUnshare_034": [
+		{
+			
+			"UserName": "surjit",
+			"UserName1": "automationUser",
+			"UserName2": "seleniumUser",
+			"Password": "welcome@123",
+			"DomainName": "TableUnshare",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName1": "MS_STORES",
+			"TableSourceName2": "MS_SALES",
+			"TableName1": "Ms Stores",
+			"TableName2": "Ms Sales"
+		}
+	],
+	"TC_DOM_TableChangeOwner_012": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"TableName1": "cars_order_details",
+			"TableName": "cars order details",
+			"User": "automationUser",
+			"DomainName": "TableChangeOwner_012",
+			"BusinessApplication": "Discoverer",
+			"DefaultDatabaseConnector": "splash_demos"
+		}
+	],
+	"TC_DOM_USRGRP_020": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"UserGroupName": "AutomationUserGroup20",
+			"UserName1": "automationUser",
+			"UserName2": "seleniumUser"
+		}
+	],
+	"TC_DOM_MSACCESS_001": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "MsaccessDom",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_STORES",
+			"path": "\\resources\\MsAccessTable.accdb",
+			"MsAccessTableName": "Employees1",
+			"ReportName": "MsaccessRep"
+		}
+	],
+	"TC_DOM_MSACCESS_002": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "MyTestDomainMsaccess_002",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_STORES",
+			"path": "\\resources\\MsAccessTable.accdb",
+			"MsAccessTableName": "Employees1",
+			"Column1": "Lastname",
+			"Column2": "Salary",
+			"ChartName": "MyTestChartMsaccess_002"
+		}
+	],
+	"TC_DOM_TABCOL_004": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "TablCol",
+			"BusinessApplication": "Oracle E-Business Suite",
+			"Connection": "splash_demos",
+			"TableName": "ms_sales",
+			"TableNameFromList": "ms sales",
+			"ColumnName": "sale Date",
+			"ModifiedColumnName": "Testsaledate"
+		}
+	],
+	"TC_DOM_TABCOL_025": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Dom",
+			"ConnectionName": "splash_demos",
+			"ObjectName": "MS_SALES",
+			"TableName": "Ms Sales",
+			"ColumnName": "Sales Id",
+			"CalColumnName": "Calcol",
+			"BusinessApplication": "Splash Samples"
+		}
+	],
+	"TC_DOM_DS_006": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"BusinessApplication": "Splash Samples",
+			"DomainName": "myDomain_006",
+			"DefConc": "Oracle EBS",
+			"TableName": "EIS_ASCP_FORECAST_SETS_V",
+			"DrillSetName": "Testing",
+			"MovedTable": "Eis Ascp Forecast Sets V"
+		}
+	],
+	"TC_DOM_DS_009": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"BusiApp": "Splash Samples",
+			"DomainName": "myDomain",
+			"DefConc": "Oracle EBS",
+			"TableName": "EIS_ASCP_FORECAST_SETS_V",
+			"DrillSetName": "Testing",
+			"MovedTable": "Eis Ascp Forecast Sets V",
+			"FilterName": "Organization Name",
+			"FilterName1": "Forecast"
+		}
+	],
+	"TC_DOM_EXCELTABLE_001": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "DOMEXCELTABLE",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_STORES",
+			"FilePath": "\\resources\\Cars_Customers.xlsx",
+			"TableName": "Cars customers data",
+			"ColumnName1": "country",
+			"ColumnName2": "State",
+			"ColumnName3": "City",
+			"ReportName": "DOMEXCELTABLERep",
+			"StatusData": "Completed"
+		}
+	],
+	"TC_DOM_EXCELTABLE_002": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "DOMExcel",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_STORES",
+			"FilePath": "\\resources\\Cars_Customers.xlsx",
+			"TableName": "Cars customers data",
+			"ColumnName_D1": "State",
+			"ColumnName_M1": "City",
+			"ChartName": "DOMExcelChart"
+		}
+	],
+	"TC_DOM_DS_016": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"BusinessApplication": "Splash Samples",
+			"DomainName": "myDomain",
+			"DefConc": "Oracle EBS",
+			"TableName": "Eis Ascp Demand Schedule V",
+			"DrillSetName": "Testing"
+		}
+	],
+	"TC_DOM_ED_152": [
+		{
+			
+			"uname": "surjit",
+			"pass": "welcome@123",
+			"domain_name": "Car Sales",
+			"datefomate": "MM/DD/YY (E.g. 06/14/13)",
+			"filePath": "\\resources\\FL_INSURANCE.csv"
+			
+		}
+	],
+	"TC_DOM_ED_154": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "DOMAIN_ED_154",
+			"Desc": "Create domainTC_DOM_ED_154",
+			"BusinessApplication": "Oracle E-Business Suite",
+			"Connection": "splash_demos",
+			"TableName": "TestSQLLoadOnce",
+			"FilePath": "\\resources\\CSVDateFile.csv",
+			"DateFormat ": "ISO Year and Week(E.g. 201652)"
+			
+		}
+	],
+	"TC_DOM_ED_097": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "TestDomain_097",
+			"BusinessApp": "Splash Samples",
+			"ConcName": "splash_demos",
+			"TableName": "TestSQL",
+			"SQLQuery": "select * from MS_STORES",
+			"InMemoryUrl": "http://192.168.0.224:8082",
+			"column1": "Region",
+			"column2": "State",
+			"ReportName": "Rep_ED_097"
+			
+		}
+	],
+	"TC_DB_RUN_060": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DashboardName": "DBwithEBSchartsFromCreate",
+			"ChartName": "AutomationEBSChart"
+		}
+	],
+	"TC_CHA_SEC_011": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomainEbs",
+			"TableName": "Eis Ascp Demand Schedule V",
+			"Dcolumn": "Schedule Name",
+			"Mcolumn": "Schedule Type",
+			"UserName1": "automationUser",
+			"Value": "yes"
+		}
+	],
+	"TC_DB_UG_0003": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"chartName": "automationChart",
+			"shareUser": "automationUser",
+			"DashboardName": "Splash_dashboard3",
+			"folderOption": "Automation5"
+		}
+	],
+	"TC_DB_RUNDB_0005": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Car Sales",
+			"TableName": "Order Details",
+			"ColumnName": "Status",
+			"ChartName": "RUNDBChart",
+			"DashboardName": "RUNDBDash",
+			"BusinessApplication": "Splash Samples",
+			"DashboardDescription": "Created for DB_RUNDB_0005 test case",
+			"NewUserName": "automationUser",
+			"NewUserPassword": "welcome@123",
+			"filepath": "\\resources\\ImportExport",
+			"chartcompare": "tc_db_rundb_0005_dashboard_1_2"
+		}
+	],
+	"TC_DB_RUNDB_0007": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Car Sales",
+			"TableName": "Order Details",
+			"ColumnName": "Sale Price",
+			"ChartName": "DB_RUNDB_0007_Chart",
+			"DashboardName": "DB_RUNDB_0007_Dashboard",
+			"BusinessApplication": "Splash Samples",
+			"DashboardDescription": "Created for DB_RUNDB_0007 test case",
+			"NewUserName": "automationUser",
+			"NewUserPassword": "welcome@123",
+			"filepath": "\\resources\\ImportExport"
+		}
+	],
+	"TC_DB_RUNDB_0009": [
+		{
+			
+			
+			"UserName": "automationUser",
+			"Password": "welcome@123",
+			"DashboardName": "automationDashboard"
+		}
+	],
+	"TC_DB_RUNDB_0011": [
+		{
+			
+			
+			"UserName": "automationUser",
+			"Password": "welcome@123",
+			"DashboardName": "automationDashboard"
+		}
+	],
+	"TC_DB_RUNDB_0033": [
+		{
+			
+			"UserName": "surjit",
+			"ShareUser": "automationUser",
+			"Password": "welcome@123",
+			"ChartName": "xxlChart",
+			"DashboardName": "xxlDashboard",
+			"FilterValues": "0.14",
+			"Condition": "MS.SALE_PRICE IN (0.14)",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"Dimensions": "Sale Units",
+			"Measures": "Sale Price",
+			"SearchChartAndDashboard": "xxl"
+		}
+	],
+	"TC_CHRT_FLTR_CRTA_20": [
+		{
+			
+			"UserName": "automationUser",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"SearchTableName": "Ms Sales",
+			"Dcolumn": "Customer Count",
+			"Mcolumn": "Sale Price",
+			"ChartName": "SplashChartFltr20",
+			"Operator": "In",
+			"Condition": "ms.SALE_PRICE IN ('0.14','0.17')",
+			"Values": "0.14,0.17"
+		}
+	],
+	"TC_CHRT_DRILLDOWN_007": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "automationDomainEbs",
+			"tableName": "Eis Ascp Demand Schedule V",
+			"columnName_D": "Schedule Name",
+			"columnName_M": "Organization Id",
+			"chartName": "MyTestChart",
+			"DrillDownType": "URL",
+			"DrillURL": "https://www.google.com/"
+		}
+	],
+	"TC_CHRT_DRILLDOWN_017": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "automationDomain",
+			"tableName": "Ms Sales",
+			"columnName_D": "Sale Units",
+			"columnName_M": "Sale Price",
+			"chartName": "MyTestingChart017",
+			"DrillDownType": "Same Chart"
+		}
+	],
+	"TC_DB_USRGRP_030": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"UserGroupName": "UG_DB_USRGRP_030",
+			"NewUserGroupName": "UG_New_DB_USRGRP_030",
+			"ShareUserName": "automationUser"
+		}
+	],
+	"TC_DB_CHRT_FLTR_0001": [
+		{
+			/*@Author ramya*/
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Products",
+			"ColumnName_D1": "Brand",
+			"ChartName": "ChartFilter0001",
+			"DashboardName": "DBFilter0001",
+			"DisplayType": "Drop Down",
+			"LOVSource": "Self LOV",
+			"FilterName": "Brand",
+			"FilterValue": "Parabuster Inc.",
+			"DefaultValues": "Big Studios,MKF Studios",
+			"DefaultValueType": "Specific Value",
+			"Condition1": "BRAND IN ('Big Studios', 'MKF Studios')",
+			"Condition2": "BRAND IN ('Big Studios', 'MKF Studios', 'Parabuster Inc.')"
+		}
+	],
+	"TC_CHRT_Embed_008": [
+		{
+			/*@Author K.NavaDurga*/
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"SettingName": "Enable EmbeddedBI",
+			"SettingOption": "On",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"ColumnName_M1": "Store Key",
+			"ColumnName_M2": "Product Key",
+			"ChartName": "Chart_embed_C8",
+			"EmbedName": "CHRT_Embed_C8",
+			"SecurityType": "Login Form",
+			"Embedtype": "Web-URL",
+			"AvailableEmbedtype": "Web-URL Embed"
+		}
+	],
+	"TC_CHRT_SORTS_003": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "automationDomain",
+			"tableName": "Ms Sales",
+			"columnName_D": "Sales Id",
+			"ChartName": "Chart Sort_003",
+			"ChartDescription": "Chart Sort desc",
+			"columnName_S1": "Sale Price",
+			"columnName_S2": "Sale Units",
+			"Condition": "DESC"
+		}
+	],
+	"TC_CHRT_TABLEFILTERS_030": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "MyTestAutomatedDomain030",
+			"tableName": "Ms Products",
+			"Filter1": "Movie Name",
+			"option": "<=",
+			"value": "The Dark Tower",
+			"columnName_D": "Movie Name",
+			"columnName_M": "Product Key",
+			"chartName": "MyTestChartTF030",
+			"ViewSql": "MOVIE_NAME <= 'The Dark Tower'",
+			"BussinessApp": "Splash Samples",
+			"Conc": "splash_demos",
+			"Table": "MS_PRODUCTS",
+			"FilterType": "Optional Read-Only",
+			"FilterCriteria": "Ms Products.Movie Name"
+		}
+	],
+	"TC_CHRT_DRILL_COLUMNS_001": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Stores",
+			"ColumnName_D1": "Region",
+			"ColumnName_M1": "Store Key",
+			"ChartName": "CHRT_DRILL_COLUMNS_001_Chart",
+			"HeaderName": "Drill Columns",
+			"DrillColumns": "Region,Store Key"
+		}
+	],
+	"TC_DB_CHRT_PROP_0004": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Stores",
+			"ColumnName_D1": "Store Name",
+			"ColumnName_M1": "Store Key",
+			"ChartName": "PROP_0004",
+			"TabName": "HTML output - "
+		}
+	],
+	"TC_DB_EXP_0042": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "SplashDomainV",
+			"BusinessApplication": "Oracle E-Business Suite",
+			"DefaultDatabaseConnector": "Oracle EBS",
+			"TableName": "CEFG_BANK_STATEMENT_LINES",
+			"lovName": "DomainLOV",
+			"LOV Type": "Query",
+			"query": "select distinct Currency_Code from apps.cefg_bank_statements",
+			"filterValue": "Domain Specific LOV",
+			"Dcolumn": "Currency Code",
+			"Mcolumn": "Reconciliation Status",
+			"ChartName": "SplashChartV",
+			"DashboardName": "SplashDashV",
+			"FilePath": "\\resources\\ImportExport",
+			"SearchTableName": "Cefg Bank Statement Lines",
+			"LovDropdown": "LOV Name",
+			"Instance": "http://192.168.4.196:8080/SplashBI/en_US/Login.html"
+		}
+	],
+	"TC_CHRT_MEASURES_FUNC_005": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"BusinessApplication": "Splash Samples",
+			"TableName": "Ms Stores",
+			"ColumnName_D1": "Store Name",
+			"ColumnName_M1": "Store Key",
+			"Aggregation": "MAX",
+			"chartName": "ChartAgg_05",
+			"chartDescription": "Chart Aggregation desc",
+			"Condition1": "MAX",
+			"Condition2": "MAX"
+		}
+	],
+	"TC_CHRT_FLTR_CRTA_08": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "automationDomain",
+			"tableName": "Ms Sales",
+			"columnName_D": "Sale Price",
+			"filterCriteriaName1": "Sale Price IN :Sale Price",
+			"chartName1": "CHRT_FLTR_CRTA_08",
+			"filterCondition": "MS.SALE_PRICE IN ('0.14','0.17')",
+			"filterCriteriaName2": "Sale Price In '0.14','0.17'"
+		}
+	],
+	"TC_UNSHARE_012": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"UserName1": "automationUser",
+			"domainName": "automationDomain",
+			"tableName": "Ms Products",
+			"columnName_D": "Movie Name",
+			"columnName_M": "Product Key",
+			"chartName": "ChartUnShare012",
+			"Msg": "Selected chart(s)/dashboard(s) are not shared to any users/user groups/responsibilities/role groups"
+		}
+	],
+	"TC_DB_RUN_077": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "Car Sales",
+			"TableName": "Products",
+			"ColumnName_D1": "Product Name",
+			"ChartName": "TableChart",
+			"ChartName1": "automationChart",
+			"ChartDescription": "TableCharts_TC_DB_RUN_077",
+			"DashboardName": "TableChartDash",
+			"BussinessApplication": "Splash Samples",
+			"DBDescription": "Dashboard with Table Charts for Automation scripts",
+			"SearchChart": "TableChart_TC_077"
+		}
+	],
+	"TC_ERP_34": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"Connection": "Oracle EBS",
+			"AuthMethod": "Native",
+			"EBSUser": "XXEIS_RS_surjit",
+			"CustomPassword": "welcome@123123",
+			"ChangePassword": "welcome@123"
+			
+		}
+	],
+	"TC_ERP_35": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUser": "XXEIS_RS_surjit",
+			"NewPass": "welcome@123",
+			"Fname": "Test",
+			"Lname": "testing15",
+			"email": "test@mail.com",
+			"Connection": "Oracle EBS",
+			"EBSpassword": "eisindia"
+			
+		}
+	],
+	"TC_ERP_37": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ConnectionName": "Oracle EBS",
+			"AuthMethod": "EBS",
+			"EBSUser": "XXEIS_RS_surjit",
+			"EBSPassword": "eisindia"
+			
+		}
+	],
+	"TC_ERP_38": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ConnectionName": "Oracle EBS",
+			"AuthMethod": "Native",
+			"EBSUser": "XXEIS_RS_surjit",
+			"EmpName": "Splash surjit"
+			
+		}
+	],
+	"TC_ERP_41": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ConnectionName": "Oracle EBS",
+			"AuthMethod": "EBS",
+			"EBSUser": "XXEIS_RS_surjit",
+			"EBSPass": "eisindia",
+			"EmpName": "Splash surjit"
+			
+		}
+	],
+	"TC_ERP_56": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"EmpName": "AellUser56",
+			"Connection": "Oracle EBS",
+			"EBSUser": "XXEIS_RS_surjit",
+			"responsibility": "ADS HR Setup,Standard",
+			
+			"FirstName": "Aell",
+			"LastName": "User",
+			"Email": "abc.xyz@g.com"
+		}
+	],
+	"TC_ERP_57": [
+		{
+			
+			"UserName": "surjit",
+			"UserName1": "Selenium User",
+			"Password": "welcome@123",
+			"EmpName": "SellUser57",
+			"Connection": "Oracle EBS",
+			"EbsUser": "XXEIS_RS_surjit",
+			"Responsibility": "ADS HR Setup,Standard",
+			
+			"FirstName": "Sell",
+			"LastName": "User",
+			"Email": "abc.xyz@g.com"
+		}
+	],
+	"TC_Con_25": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"connname": "splash_data",
+			"user2": "automationUser",
+			"pass2": "welcome@123",
+			"User3": "Automation User"
+			
+		}
+	],
+	"TC_Con_26": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"connname": "Oracle EBS",
+			"usergroup": "automationUserGroup",
+			"user2": "automationUser",
+			"pass2": "welcome@123"
+			
+		}
+	],
+	"TC_Con_35": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ConnectionName": "Con_35_Oracle_Chrome",
+			"SystemType": "Oracle E-Business Suite",
+			"HostName": "192.168.0.249",
+			"Sid": "QAT",
+			"ConnectionUser": "apps",
+			"ConnectionPwd": "apps",
+			"Port": "1521"
+			
+		}
+	],
+	"TC_Con_61": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DisplayConnection page": "Connections"
+			
+		}
+	],
+	"TC_ERP_17": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123"
+			
+		}
+	],
+	"TC_ERP_27": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"filePath": "\\resources\\oracle_ebs_user_mappings_surjit.zip",
+			"user": "seleniumUser"
+			
+		}
+	],
+	"TC_USR_13": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"FirstName": "Test",
+			"LastName": "test",
+			"Email": "test@test.com",
+			"WarningMessage": "Enter the User name",
+			"NewUser": "NewAutoUser"
+		}
+	],
+	"TC_USR_SETTINGS_18": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"FirstName": "Test",
+			"LastName": "test",
+			"Email": "test@test.com",
+			"NewUser": "2NewAutoUser",
+			"Language": "German"
+		}
+	],
+	"TC_CA_022": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "MyTestingClient_022",
+			"Defaultsurjit": "MyTestingDefsurjit_022",
+			"SettingName": "Country",
+			"NewPassword": "welcome@1231",
+			"SettingValue": "India"
+		}
+	],
+	"TC_CA_029": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ClientName": "AutoClient_29",
+			"Defaultsurjit": "ssurjit",
+			"NewPassword": "shyam",
+			"Setting Name": "Country",
+			"TotalUser": "4",
+			"ExcelConnectUsers": "1",
+			"surjitUsers": "1",
+			"Developers": "1"
+		}
+	],
+	"TC_SITE_LAN_20": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"NewUser": "User_new_201",
+			"FirstName": "ras",
+			"LastName": "jha",
+			"Email": "rashmi.jha@splashbi.com",
+			"Language": "Chinese",
+			"tab": "Site"
+		}
+	],
+	"TC_Con_19": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"connectionName": "TC_Con_19",
+			"ClassificationType": "Database",
+			"ConnectionType": "Manual",
+			"DatabaseType": "MySQL",
+			"HostName": "192.168.4.213",
+			"Database": "splash_demos402",
+			"username": "splash_mds402",
+			"pwd": "splash_mds402",
+			"port": "3306",
+			"editconnectionName": "splash_mds402",
+			"Table": "Automation_Tc_Con_19",
+			
+			"BusinessApplication1": "Splash Samples"
+		}
+	],
+	"TC_ADM_BA_EDIT_012": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"BusinessApp": "ADM_BA_EDIT_012_BA",
+			"NewBusinessApp": "ADM_BA_EDIT_012_BA_New",
+			"Message": "Business Application saved successfully"
+		}
+	],
+	"TC_ADM_DOC_066": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"filepath": "\\resources\\Cars_Customers.xlsx",
+			"documentname1": "doc12",
+			"documentname2": "doc57",
+			"CategoryName": "TestCatgory"
+		}
+	],
+	"TC_ADM_FOL_032_To_47": [
+		{
+			/*@Author Ramesh Chirumamilla*/
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ErrorMessage_033_bussApp": "Enter Folder Name",
+			"ErrorMessage_033_foldername": "Please select Business Application",
+			"BusinessAppName": "Splash Samples",
+			"foldername": "ADM_FOL",
+			"domainName": "TC_ADM_FOL_",
+			"connectionName": "splash_demos",
+			"tableName": "MS_SALES",
+			"ObjName": "Ms Sales",
+			"reportName": "REP_ADM_FOL_",
+			"columnName1": "Store Key",
+			"columnName2": "Sale Units",
+			"chartName": "CH_ADM_FOL_"
+		}
+	],
+	"TC_Con_28": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ConnectionName": "splash_demos",
+			"UserGroupName": "automationUserGroup",
+			"SharedUserName": "automationUser",
+			"SharedPassword": "welcome@123"
+			
+		}
+	],
+	"TC_ERP_18": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"FilePath": "\\resources\\ImportExport"
+		}
+	],
+	"TC_ERP_28": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"FilePath": "\\resources\\ImportExport"
+			
+		}
+	],
+	"TC_ADM_US_APPLYSECURTY_99": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"SettingCategory": "Technical",
+			"SettingName": "Apply Security To surjit Users",
+			"NewUser": "APPLYSECURTY_99User",
+			"Option": "Yes",
+			"FirstName": "TC_ADM_UG_APPLYSECURTY_100",
+			"LastName": "User",
+			"Email": "dev@testing.com"
+		}
+	],
+	"TC_FTP_001": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"FTPSiteName": "newFTPSite_001",
+			"ConcType": "FTP",
+			"HostName": "192.168.0.251",
+			"Protocol": "SSH File Transfer Protocol",
+			"RemoteSiteDirectory": "/home/glassfish",
+			"TransferMode": "ASCII",
+			"ReportName": "automationReport",
+			"FtpUser": "glassfish",
+			"FtpPassword": "welcome@123"
+			
+		}
+	],
+	"TC_RSet20": [
+		{
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportSetName": "TestSet999",
+			"Options": "Copy,Share,Export,Favorite,Info,Language,Delete"
+		}
+	],
+	"TC_RSet_062": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"reportSetName": "RunReportSet_TC_Rset_62",
+			"BusinessAppName": "Splash Samples",
+			"FolderName": "Car Sales"
+			
+		}
+	],
+	"TC_RSet_07": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"reportSetName": "reportSetTC_RSet_7",
+			"successMsg": "Report Set Saved Successfully"
+			
+		}
+	],
+	"TC_RSet_77": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "automationReportSet"
+			
+		}
+	],
+	"TC_REP_FLTR_CRTA_01": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "autoDomainOrcleEBS",
+			"TablesName1": "Bom Bill Of Materials",
+			"ColumnName": "Organization Id",
+			"ReportName": "testFLTR_CRTA_001",
+			"newOwner1": "automationUser",
+			"surjitNewUser": "surjit"
+		}
+	],
+	"TC_REP_FLTR_CRTA_03": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "autoDomainOrcleEBS",
+			"TableName": "Bom Bill Of Materials",
+			"ColumnName": "Organization Id"
+		}
+	],
+	"TC_REP_FLTR_CRTA_058": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "Car Sales",
+			"ReportName1": "ReportCRTA_058",
+			"ColumnName": "City",
+			"ColumnName1": "Customernumber"
+		}
+	],
+	"TC_REP_FLTR_CRTA_062": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "AutomationReport",
+			"NewReportName": "change New owner",
+			"ReportColumnn": "Sale Units",
+			"NewUserName": "automationuser",
+			"newOwner1": "automationuser",
+			"surjitNewUser": "surjit"
+		}
+	],
+	"TC_REP_FLTR_CRTA_40": [
+		{
+			"UserName": "automationUser",
+			"Password": "welcome@123",
+			"DomainName": "autoDomainOrcleEBS",
+			"TableName": "Bom Bill Of Materials",
+			"ColumnName": "Organization Id"
+		}
+	],
+	"TC_REP_SRT_010": [
+		{
+			
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "REP_SRT_010",
+			"BusinessApplication": "Splash Samples",
+			"DefaultDatabaseConnector": "splash_demos",
+			"TableSourceName": "MS_STORES",
+			"TableName": "Ms Stores",
+			"ColumnName1": "Region",
+			"ColumnName2": "State",
+			"ColumnName3": "Floor Plan Type",
+			"ReportName": "Sorts Report_010",
+			"ReportDescription": "Create Multiple sorts & checking Bottom Functionality in output",
+			"Option": "Bottom"
+		}
+	],
+	"TC_REP_DELPRO_01": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"ReportName": "DELPRO01"
+		}
+	],
+	"TC_REP_RESPRO_01": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ReportName": "REP_RESPRO_01",
+			"DomainName": "automationDomain",
+			"TablesName": "Ms Stores",
+			"columnName": "Region",
+			"specific value": "East"
+		}
+	],
+	"TC_Rep_EdiAggr_1": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"ReportName": "TC_REP_EdiAggr",
+			"TableName": "Ms Sales",
+			"ColumnName": "Sale Price"
+		}
+	],
+	"TC_Rep_EdiAggr_2": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"ReportName": "TC_REP_EdiAggr_2_Report",
+			"TableName": "Ms Sales",
+			"ColumnName": "Sale Price"
+		}
+	],
+	"TC_FILTERS_CRFIL_005": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"DomainName": "automationDomain",
+			"TableName": "Ms Sales",
+			"FilterName": "Filter1"
+		}
+	],
+	"TC_CHRT_DRILLDOWN_012": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "automationDomain",
+			"tableName": "Ms Sales",
+			"columnName_D": "Sale Units",
+			"columnName_M": "Sales Id",
+			"chartName": "Chart",
+			"file": "\\resources\\ImportExport",
+			"DrillDownType": "URL",
+			"DrillURL": "https://www.google.com/"
+		}
+	],
+	"Create_ActiveDirectory_Insurjit": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"ADURL": "192.168.0.36:389",
+			"expName": "User Group Mapping"
+			
+		}
+	],
+	"Export_Users_TemplateWithData": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123"		
+			
+		}
+	],
+	"Verify_Report_InMaintainace": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "automationDomain",
+			"tableName": "Ms Sales",
+			"busiApp": "Splash Samples"	
+			
+		}
+	],
+	"Report_Edit_Add_OneMoreTable": [
+		{	
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "automationDomain",
+			"tableName1": "Ms Sales",
+			"tableName2": "Ms Stores",
+			"busiApp": "Splash Samples"	
+			
+		}
+	],
+	"DomainExportImport": [
+		{
+			
+			"UserName": "surjit",
+			"Password": "welcome@123",
+			"domainName": "Domain",
+			"tableName": "Ms Sales",
+			"columnName_D": "Sale Units",
+			"columnName_M": "Sales Id",
+			"file": "\\resources\\ImportExport"
+		}
+	]
+	
+}

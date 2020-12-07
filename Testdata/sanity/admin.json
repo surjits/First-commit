@@ -1,0 +1,36 @@
+{
+  "exportUserMapping": [
+    {
+      "Run": "Yes"
+    }
+  ],
+  "exportUserTemplateWithData": [
+    {
+      "Run": "Yes"
+    }
+  ],
+  "changeLanguageOfUser": [
+    {
+      "Run": "Yes",
+      "language": "Italian"
+    }
+  ],
+  "checkStatusOfAllConnectors": [
+    {
+      "Run": "Yes"
+    }
+  ],
+  "editOracleEbsConnection": [
+    {
+      "Run": "Yes",
+      "Connector": "Oracle EBS",
+      "password": "apps"
+
+    }
+  ],
+  "verifyEditFolderWindo": [
+    {
+      "Run": "Yes"
+    }
+  ]
+}

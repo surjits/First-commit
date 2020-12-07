@@ -27,7 +27,7 @@ Session ID: 136b3b253e8370ebbad11d61b6985c32
 	at com.splashbi.pageobject.BasePage.getWebElement(BasePage.java:130)
 	at com.splashbi.pageobject.BasePage.inputText(BasePage.java:245)
 	at com.splashbi.pageobject.LoginPage.signIn(LoginPage.java:52)
-	at com.splashbi.sanitydata.OracleEBS.checkConnectionStatus(OracleEBS.java:24)
+	at com.splashbi.presanity.OracleEBS.checkConnectionStatus(OracleEBS.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -45,7 +45,14 @@ public enum ERPMappingPageElement implements InitPageElement {
     ADD_RESPONSIBILITY_ACTION(getValueFromPropFile("add_responsibility_action")),
     ROLES_RESPONSIBILITY_WINDOW(getValueFromPropFile("roles_responsibility_window")),
     AVAILABLE_ROLE_RESPONSIBILITY(getValueFromPropFile("available_role_responsibility")),
+   /*########################SANITY##################################################*/
+    MASS_EDIT_ICON_IN_USER_MAPPING(getValueFromPropFile("mass_edit_icon")),
+    CHECKBOX_TO_SELECT_FIRST_EMPLOYEE(getValueFromPropFile("checkbox_to_select_first_employee")),
+    EXPORT_USER_MAPPING(getValueFromPropFile("export_user_mapping")),
+    EXPORT_USER_MAPPING_POPUP_HEADER(getValueFromPropFile("export_user_mapping_popup_header")),
+    OK_BUTTON_IN_USER_MAPPING_EXPORT_POPUP(getValueFromPropFile("ok_button_in_user_mapping_export_popup")),
     WARNING_POPUP(getValueFromPropFile("warning_popup"));
+
 
     private String loc;
     public String expression;

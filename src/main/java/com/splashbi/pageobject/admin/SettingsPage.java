@@ -79,4 +79,22 @@ public class SettingsPage extends BasePage {
             return false;
         }
     }
+    public boolean isLanguageUpdated(String user,String language){
+        boolean isUpdated = false;
+        clickButton(USER_SETTINGS);
+        waitForVisibilityOfElement(LANGUAGE_IN_USER_SETTINGS);
+        clickButton(LANGUAGE_IN_USER_SETTINGS);
+        inputText(SETTING_USER_SEARCH,user);
+        if(isElementDisplayed(CURRENT_SETTING_IN_USER_SETTINGS,language)){
+            isUpdated = true;
+            test.log(LogStatus.PASS,"Language:"+" "+language+" "+"is updated for user"+" "+user);
+            test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+        }
+        else{
+            test.log(LogStatus.FAIL,"Language  " +language+"  not upadted for user");
+            test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+        }
+        return isUpdated;
+    }
+
 }

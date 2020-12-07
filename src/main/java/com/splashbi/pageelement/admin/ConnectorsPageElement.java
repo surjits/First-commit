@@ -9,6 +9,10 @@ import org.openqa.selenium.WebElement;
 
 public enum ConnectorsPageElement implements InitPageElement {
     CONNECTOR_HOME(getValueFromPropFile("connectors_home")),
+    CHECK_STATUS_OF_ALL_CONNECTORS(getValueFromPropFile("check_status_of_all_connectors")),
+    LIST_OF_VALID_CONNECTORS(getValueFromPropFile("valid_connector_list")),
+    LIST_OF_INVALID_CONNECTORS(getValueFromPropFile("invalid_connector_list")),
+    STATUS_CHECK_LOADER_IMG(getValueFromPropFile("status_loader_img")),
     SEARCH_CONNECTOR(getValueFromPropFile("search_connector")),
     ORACLE_EBS(getValueFromPropFile("oracle_EBS")),
     CREATE_CONNECTORS(getValueFromPropFile("create_connector")),

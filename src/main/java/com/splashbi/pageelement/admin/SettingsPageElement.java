@@ -30,8 +30,12 @@ public enum SettingsPageElement implements InitPageElement {
     SETTING_SAVE(getValueFromPropFile("save_settings")),
     DEFAULT_SETTING(getValueFromPropFile("default_setting")),
     VALIDATE_SUCCESS(getValueFromPropFile("validate_success")),
-    WARNING_POPUP(getValueFromPropFile("warning_popup"));
-
+    WARNING_POPUP(getValueFromPropFile("warning_popup")),
+/***************************Sanity cases***********************************/
+    LANGUAGE_IN_USER_SETTINGS(getValueFromPropFile("language_in_user_settings")),
+    SETTING_USER_SEARCH(getValueFromPropFile("settings_user_serach")),
+    SEARCHED_USER_DETAILS_LIST_IN_LANGUAGE_USER_SETTINGS(getValueFromPropFile("user_detail_list_in_user_settings_language")),
+    END(getValueFromPropFile("end"));
     private String loc;
     public String expression;
     WebElement e;

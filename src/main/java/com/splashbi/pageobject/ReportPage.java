@@ -88,7 +88,7 @@ public class ReportPage extends BasePage {
 			waitForInvisibilityOfLoader();
 			waitForElementToBePresent(OK_ADD_REPORTS);
 			wait(2);
-			List<WebElement> checkbox_list = getWebElementList(REPORTS_CHECKBOX_LIST);
+			//List<WebElement> checkbox_list = getWebElementList(REPORTS_CHECKBOX_LIST);
 			selectFirstNItemFromList(REPORTS_CHECKBOX_LIST, 3);
 			List<WebElement> reports = getWebElementList(REPORTS_NAME_LIST);
 			List<String> reportnames = new ArrayList<String>();
@@ -100,9 +100,8 @@ public class ReportPage extends BasePage {
 			clickButton(SAVE_REPORT_SET);
 			waitForElementToBePresent(REPORTSET_NAME_FIELD);
 			inputText(REPORTSET_NAME_FIELD, repsetName);
+			clickButton(BUSINESS_APP_LIST);
 			selectFromlistByKeyAction(BUSINESS_APP_LIST,businessApp);
-			//clickButton(BUSINESS_APP_LIST);
-			//clickButton(BUSINESS_APP_NAME_IN_REPORTSET, businessApp);
 			clickButton(CREATE_FOLDER);
 			waitForVisibilityOfElement(NEW_FOLDER_NAME);
 			inputText(NEW_FOLDER_NAME, foldername);
@@ -163,20 +162,14 @@ public class ReportPage extends BasePage {
 
 	public boolean isReportSetCreated(String reportSetName)  {
 		boolean created = false;
-		try {
+
 			if (isElementDisplayed(VERIFY_REPSET_TAB, reportSetName)) {
 				created = true;
+				test.log(LogStatus.PASS, "Report set" + " " + reportSetName + " " + "created successfully");
+			}else {
+				test.log(LogStatus.FAIL, "Report set creation failed");
+				test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
 			}
-			System.out.println("Report created successfully");
-			//test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
-			test.log(LogStatus.PASS, "Report set" + " " + reportSetName + " " + "created successfully");
-
-		} catch (Exception e) {
-			created = false;
-			logger.error("Report set not created", e);
-			test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
-
-		}
 		return created;
 	}
 
@@ -184,22 +177,17 @@ public class ReportPage extends BasePage {
 	public boolean isReportCreated(String reportName) {
 		boolean created = false;
 		System.out.println("Report name="+getTextValue(VERIFY_REPORT_CREATED));
-		try {
+
 			if(getTextValue(VERIFY_REPORT_CREATED).contains(reportName)) {
 				created = true;
+				test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+				test.log(LogStatus.PASS,"Report created successfully");
+			}else{
+				logger.error("Report not created");
+				test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
 			}
 			System.out.println("Report created successfully");
-			test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
-			test.log(LogStatus.PASS,"Report created successfully");
-
-		}catch(Exception e) {
-			created = false;
-			logger.error("Report not created",e);
-			test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
-		}
-
 		return created;
 	}
-
 
 }

@@ -47,18 +47,13 @@ public class DomainPage extends BasePage {
 			System.out.println("business app= "+businessapp);
 			logger.info("Entering createDomainWithNewFolder method");
 			waitAndClick(CREATE_DOMAIN);
-
 			inputText(DOMAIN_NAME,domain);
-			//clickButton(BUSINESS_APP_LIST);
 			selectFromlistByKeyAction(BUSINESS_APP_LIST,businessapp);
-		   // selectItemFromAlist(LIST_OF_BUSINESSAPPS,businessapp);
-			clickButton(CREATE_FOLDER_CHECKBOX);
+		   	clickButton(CREATE_FOLDER_CHECKBOX);
 			clickButton(CREATE_FOLDER);
 			String foldername = Utility.getRandomNumber(Utility.getValueFromPropertyFile(Constant.CONFIG_PATH,"foldername"));
 			logger.info("Folder name is: "+foldername);
 			inputText(FOLDER_NAME,foldername);
-			//clickButton(DB_CONNECTOR_LIST);
-
 			selectFromlistByKeyAction(DB_CONNECTOR_LIST,dbconnector);
 		    selectItemFromAlist(CONNECTOR_LIST,dbconnector);
 			clickButton(SAVE_BUTTON);

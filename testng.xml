@@ -9,20 +9,20 @@
     </listeners>
     <test name="Smoke_Test" preserve-order="true">
         <classes>
-            <class name="com.splashbi.sanitydata.admin.Users"/>
-            <class name="com.splashbi.sanitydata.admin.Connectors"/>
-            <class name="com.splashbi.sanitydata.admin.ERPMapping">
+            <class name="com.splashbi.presanity.admin.Users"/>
+            <class name="com.splashbi.presanity.admin.Connectors"/>
+            <class name="com.splashbi.presanity.admin.ERPMapping">
                 <methods>
                     <include name="createUserMapping" />
                     <include name="importOracleEBSResponsibilities" />
                     <include name="addSResponsibilitiesToUser" />
                 </methods>
             </class>
-            <class name="com.splashbi.sanitydata.admin.setup"/>
-            <class name="com.splashbi.sanitydata.admin.Settings"/>
-            <class name="com.splashbi.sanitydata.domain.Domain"/>
-            <class name="com.splashbi.sanitydata.report.Reports"/>
-            <class name="com.splashbi.sanitydata.dashboard.Dashboard">
+            <class name="com.splashbi.presanity.admin.Setup"/>
+            <class name="com.splashbi.presanity.admin.Settings"/>
+            <class name="com.splashbi.presanity.domain.Domain"/>
+            <class name="com.splashbi.presanity.report.Reports"/>
+            <class name="com.splashbi.presanity.dashboard.Dashboard">
                 <methods>
                     <include name="createNonEbsChart" />
                     <include name="createDashboard" />

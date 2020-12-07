@@ -98,7 +98,9 @@ public enum DynamicPageElement implements InitPageElement {
     //*********************************ERP MAPPING PAGE****************************************
     USER_SEARCHED_IN_USER_MAPPING(getValueFromPropFile("user_in_mapping_list")),
     //*********************************SETTINGS PAGE****************************************
-    SETTING_OPTION(getValueFromPropFile("setting_option"));
+    SETTING_OPTION(getValueFromPropFile("setting_option")),
+	//****************************Sanity case*****************
+    CURRENT_SETTING_IN_USER_SETTINGS(getValueFromPropFile("current_setting_in_user_settings_language"));
 
 	private String loc;
 	public String expression;

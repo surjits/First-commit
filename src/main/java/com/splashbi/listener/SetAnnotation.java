@@ -29,7 +29,7 @@ public class SetAnnotation implements IAnnotationTransformer {
 	  }*/
 	public boolean getRunValueOfTest(String testname) {
 		boolean run = true;
-		if(Utility.getValueForKey(new File(Constant.TEST_DATA_JSON),testname,"Run").equals("No")) {
+		if(Utility.getValueForKey(new File(Constant.SANITY_TEST_DATA),testname,"Run").equals("No")) {
 			run = false;
 		}
 		return run;

@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 //import com.splashbi.pageobject.*;
@@ -20,6 +21,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -98,7 +101,17 @@ public static WebDriver driver;
 	public TestSetup(){
 
 	}*/
+	public static ChromeOptions setDesiredCapability(){
+		String downloadFilepath = Constant.DOWNLOAD_PATH;
+		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+		chromePrefs.put("profile.default_content_settings.popups", 0);
+		chromePrefs.put("download.default_directory", downloadFilepath);
+		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("prefs", chromePrefs);
+		return options;
+	}
 	public static WebDriver initDriver() {
+
 		WebDriverManager.chromedriver().setup();
 		try {
 		//System.setProperty("webdriver.chrome.driver",Utility.getValueFromPropertyFile(Constant.CONFIG_PATH, "chromedriver_path"));
@@ -117,23 +130,7 @@ public static WebDriver driver;
 		}
 		return driver;
 	}
-	
-	public void initializePageObjects() {
-		login = new LoginPage(driver);
-		home = new com.splashbi.pageobject.HomePage(driver);
-		domain = new com.splashbi.pageobject.DomainPage(driver);
-		report = new com.splashbi.pageobject.ReportPage(driver);
-		admin = new com.splashbi.pageobject.admin.AdminPage(driver);
-		users = new com.splashbi.pageobject.admin.UsersPage(driver);
-		setup = new com.splashbi.pageobject.admin.SetupPage(driver);
-		setting = new com.splashbi.pageobject.admin.SettingsPage(driver);
-		folder = new FolderPage(driver);
-		usergroup = new UserGroupPage(driver);
-		connector = new com.splashbi.pageobject.admin.ConnectorsPage(driver);
-		erpmap = new com.splashbi.pageobject.admin.ERPMappingPage(driver);
-		businessapp = new BusinessAppPage(driver);
-		dashboard = new com.splashbi.pageobject.DashboardPage(driver);
-	}
+
 	public void setDatapoints(){
 
 	}
@@ -155,7 +152,7 @@ public static WebDriver driver;
 		Runtime.getRuntime().exec("TASKKILL /IM chromedriver.exe /F");
 		//extent = new ExtentReports (System.getProperty("user.dir") +"/test-output/STMExtentReport.html", true);
 		extent = extentreport.getInstance("SanityData");
-	    initDriver();
+	   // initDriver();
 	}
 	public void signIn(){
 		//ExtentTest childTest=extent.startTest("Login To SplashBi");
@@ -168,6 +165,7 @@ public static WebDriver driver;
 		
 	@BeforeMethod
 	public void beforeMethod(Method method) {
+		initDriver();
 		//initializePageObjects();
 		basePage = new BasePage(driver);
 
@@ -203,7 +201,7 @@ public static WebDriver driver;
 			}
 
 			extent.endTest(test);
-		//	driver.quit();
+	//driver.quit();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -279,6 +277,6 @@ public static WebDriver driver;
 	
 	@DataProvider(name="LoadData")
 	public static Object[][] tableFilters(Method method) {
-		return Utility.getData(new File(Constant.TEST_DATA_JSON), method.getName());
+		return Utility.getData(new File(Constant.SANITY_TEST_DATA), method.getName());
 	}
 }

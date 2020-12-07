@@ -51,6 +51,7 @@ public class AdminPage extends BasePage {
             case "setup":
                 page = SETUP;
                 break;
+
         }
         try {
             clickButton(page);
@@ -60,8 +61,8 @@ public class AdminPage extends BasePage {
                 clickButton(page);
                 waitForInvisibilityOfLoader();
             }
-            test.log(LogStatus.PASS,"Navigated to page"+" "+pagename);
-            test.log(LogStatus.INFO, "Navigated to Admin Page: ");
+            test.log(LogStatus.PASS,"Navigated to"+" "+pagename+" "+ "page");
+
         } catch (Exception e) {
             test.log(LogStatus.ERROR, printError(e,2));
             test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));

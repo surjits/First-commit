@@ -47,12 +47,15 @@ public class UsersPage extends BasePage {
         return userPage;
 
     }
-    public boolean isUserCreated(String user) {
-        boolean userCreated = false;
+    public void searchUser(String username){
         waitForVisibilityOfElement(USER_HOME_PAGE);
         clickButton(SEARCH_USER);
-        inputText(SEARCH_USER,user);
+        inputText(SEARCH_USER,username);
         hitEnterKey(SEARCH_USER);
+    }
+    public boolean isUserCreated(String user) {
+        boolean userCreated = false;
+        searchUser(user);
         if(isElementDisplayed(USER_SEARCHED,user)){
             userCreated = true;
             clickButton(INFO_USER,user);
@@ -74,9 +77,6 @@ public class UsersPage extends BasePage {
         waitForVisibilityOfElement(CREATE_USER_PAGE);
         user=fillUserBasicDetails(input,first, last,password);
         clickButton(SAVE_NEXT);
-       /* if(isElementDisplayed(DISMISS_SUCCESS)){
-            clickButton(DISMISS_SUCCESS);
-        }*/
         waitForInvisibilityOfLoader();
         waitForVisibilityOfElement(SUCCESS_MESSAGE);
         wait(2);
@@ -202,4 +202,44 @@ public class UsersPage extends BasePage {
         }
 
     }
+    public void exportUsersTemplate(){
+        clickButton(MORE_ACTION);
+        clickButton(EXPORT_USER_TEMPLATE_WITH_DATA);
+        waitForVisibilityOfElement(SELECT_EXPORT_OPTION);
+        clickButton(OPTION_USERS);
+        test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+        clickButton(EXPORT_BUTTON);
+    }
+    public boolean isFileDownloaded(String filename) {
+        boolean download = false;
+        try {
+            String downlodfile = Utility.checkIfFileDownloaded(Constant.DOWNLOAD_PATH, filename, 1);
+            if (downlodfile.contains(filename)) {
+                download = true;
+                test.log(LogStatus.PASS, "Found the file: " + downlodfile + " " + "in Download folder");
+            }
+        } catch (Exception e) {
+            logger.error("File download has some issue", e);
+            test.log(LogStatus.FAIL, "Could not find the donloaded file");
+        }
+        return download;
+    }
+    public void navigateToUserEdit(){
+        clickButton(ACTION_BUTTON);
+        clickButton(USER_EDIT);
+        waitForInvisibilityOfLoader();
+    }
+    public void editUserParameter(String paramfield, String paramValue) {
+        navigateToUserEdit();
+        waitForVisibilityOfElement(EDIT_USER_WINDOW);
+        clickButton(EDIT_USER_SAVE_NEXT);
+        waitForInvisibilityOfLoader();
+        waitForVisibilityOfElement(SUCCESS_MESSAGE);
+        if (paramfield.equalsIgnoreCase("language")) {
+            selectFromlistByKeyAction(LANGUAGE_LIST_IN_SETTING,paramValue);
+        }
+        clickButton(SAVE_USER_EDIT);
+        waitForVisibilityOfSuccessMessage();
+    }
+
 }
