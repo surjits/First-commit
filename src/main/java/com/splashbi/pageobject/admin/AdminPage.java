@@ -20,6 +20,7 @@ public class AdminPage extends BasePage {
     public SetupPage setup;
     public UsersPage user;
     public ERPMappingPage erp;
+    public MaintenancePage maintenance;
     Logger logger = Logger.getLogger(AdminPage.class);
 
     public AdminPage(WebDriver driver, ExtentTest test) {
@@ -51,6 +52,9 @@ public class AdminPage extends BasePage {
             case "setup":
                 page = SETUP;
                 break;
+            case "maintenance":
+                page = MAINTENANCE;
+                break;
 
         }
         try {
@@ -74,6 +78,10 @@ public class AdminPage extends BasePage {
     public ConnectorsPage navigateToConnectorsPage()  {
         navigateToPageInAdmin("connector");
         return new ConnectorsPage(driver);
+    }
+    public MaintenancePage navigateToMaintenancePage()  {
+        navigateToPageInAdmin("maintenance");
+        return new MaintenancePage(driver);
     }
     public UsersPage navigateToUsersPage()  {
         navigateToPageInAdmin("users");

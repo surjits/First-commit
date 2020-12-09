@@ -1,0 +1,13 @@
+{
+  "exportUserMapping": [
+    {
+      "Run": "Yes"
+    }
+  ],
+  "exportUserTemplateWithData": [
+    {
+      "Run": "Yes"
+    }
+  ]
+
+}

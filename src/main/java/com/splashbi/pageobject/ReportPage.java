@@ -139,6 +139,16 @@ public class ReportPage extends BasePage {
 		}
 
 	}
+	public void runAndSubmitReport(String report){
+		//isReportAvailable(report);
+		waitForVisibilityOfElement(RUN_THE_REPORT);
+		clickButton(RUN_THE_REPORT);
+		isErrorPresent();
+		waitForInvisibilityOfLoader();
+		waitForVisibilityOfElement(SUBMIT_A_REPORT);
+		clickButton(SUBMIT_A_REPORT);
+		waitForInvisibilityOfLoader();
+	}
 	public boolean verifySqlViewContent(String text1, String text2) throws Exception  {
 		boolean present=false;
 		try {
@@ -171,6 +181,14 @@ public class ReportPage extends BasePage {
 				test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
 			}
 		return created;
+	}
+	public boolean isReportAvailable(String reportname){
+		inputText(SEARCH_REPORT,reportname );
+		if(isElementDisplayed(VERIFY_SEARCHED_REPORT)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 

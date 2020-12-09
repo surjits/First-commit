@@ -30,7 +30,7 @@
 			"Run": "Yes",
 			"bussinessApp": "Splash Samples",
 			"dbconnector": "splash_demos",
-			"tablenames":"Ms_Products,Ms_Sales"
+			"tablenames":"Ms_Products,Ms_Sales,Ms_Stores"
 
 		}
 

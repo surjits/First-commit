@@ -1,0 +1,43 @@
+{
+  "createDomainWithoutTable": [
+    {
+      "Run": "Yes",
+	  
+    }
+  ],
+  "createDomainWithOneTableWithDrillQuerySet": [
+    {
+      "Run": "Yes",
+	  "bussinessApp": "Splash Samples",
+	  "dbconnector": "splash_demos",
+	  "tablename":"Ms_Stores"
+	  
+    }
+  ],
+  "createLovForDomain": [
+    {
+      "Run": "Yes",
+	  "lov_type": "Query"
+	  "lov_query": "SELECT CITY,REGION FROM MS_STORES"
+	  
+    }
+  ],
+  "createDomainWithMultiTable": [
+	{
+		"Run": "Yes",
+		"bussinessApp": "Splash Samples",
+		"dbconnector": "splash_demos",
+		"tablenames":"Ms_Products,Ms_Sales,Ms_Stores"
+
+	}
+
+	],
+  "exportUserTemplateWithData": [
+    {
+      "Run": "Yes",
+	"bussinessApp": "Splash Samples",
+			"dbconnector": "splash_demos",
+    }
+  ]
+
+}

@@ -63,6 +63,7 @@ public static WebDriver driver;
 	public ReportPage report = null;
 	public AdminPage admin = null;
 	public ConnectorsPage connector = null;
+	public MaintenancePage maintenence = null;
 	public UsersPage users = null;
 	public SetupPage setup = null;
 	public UserGroupPage usergroup = null;

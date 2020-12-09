@@ -49,13 +49,13 @@ public class DomainPage extends BasePage {
 			waitAndClick(CREATE_DOMAIN);
 			inputText(DOMAIN_NAME,domain);
 			selectFromlistByKeyAction(BUSINESS_APP_LIST,businessapp);
-		   	clickButton(CREATE_FOLDER_CHECKBOX);
+			clickButton(CREATE_FOLDER_CHECKBOX);
 			clickButton(CREATE_FOLDER);
 			String foldername = Utility.getRandomNumber(Utility.getValueFromPropertyFile(Constant.CONFIG_PATH,"foldername"));
 			logger.info("Folder name is: "+foldername);
 			inputText(FOLDER_NAME,foldername);
 			selectFromlistByKeyAction(DB_CONNECTOR_LIST,dbconnector);
-		    selectItemFromAlist(CONNECTOR_LIST,dbconnector);
+			selectItemFromAlist(CONNECTOR_LIST,dbconnector);
 			clickButton(SAVE_BUTTON);
 			waitForInvisibilityOfLoader();
 
@@ -103,73 +103,110 @@ public class DomainPage extends BasePage {
 
 		return created;
 	}
-
-	public void addTableToDomain(String tablename) throws Exception {
-		System.out.println(" in addTableToDomain");
+	public void addTableAndSetDrillQuery(String tablename){
 		try {
-			inputText(TABLE_SEARCH_BOX,tablename);
-			dragAndDrop(TABLE_TO_DRAG,tablename.toUpperCase(),TABLE_DROP_LOC);
-			waitForInvisibilityOfLoader();
-			waitForVisibilityOfElement(DOMAIN_TABLE,tablename.toUpperCase());
-
+			addTableToDomain(tablename);
 		}catch(Exception e) {
 			logger.error(e.toString());
-			test.log(LogStatus.FAIL, "Table add failed");
-			throw e;
+			test.log(LogStatus.FAIL, "Table add failed", printError(e, 3));
 		}
 	}
+    public void setDrillQueryForTables(String[] tables){
+		for(int i = 0; i<tables.length; i++){
+			setDrillQueryForTable(tables[i]);
+		}
+	}
+	public int drillTypeTableCount(){
+		test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+		return getListSize(DRILL_QUERY_TYPE_TABLE_LIST);
+	}
+	public void setDrillQueryForTable(String table){
+		clickButton(DOMAIN_TABLE,table.toUpperCase());
+		if(isElementDisplayed(DRILL_QUERY_CHECKBOX)){
+			clickButton(DRILL_QUERY_CHECKBOX);
+			test.log(LogStatus.PASS, "Snapshot Below: " + test.addScreenCapture(captureElementScreenshot(DRILL_QUERY_ROW)));
+			test.log(LogStatus.PASS, "Drill query Option set for the table:"+table);
+		}else{
+			test.log(LogStatus.FAIL, "Drill query Option not available");
+			test.log(LogStatus.FAIL, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+		}
+		clickButton(SAVE_TABLE);
+		clickButton(BACK_TO_DOMAIN_EDIT);
+	}
 
-	public boolean verifyTableAdded(String[] table)  {
-		boolean display = false;
-		try {
-			for(int i =0; i<table.length; i++) {
-				if(getTextValue(DOMAIN_TABLE,table[i].toUpperCase()).equals(table[i].replaceAll("_",""))) {
-					display = true;
-				}
+	public void addTableToDomain(String tablename)   {
+		System.out.println(" in addTableToDomain");
+		inputText(TABLE_SEARCH_BOX, tablename);
+		waitForVisibilityOfElement(TABLE_TO_DRAG, tablename.toUpperCase());
+		try{
+		  dragAndDrop(TABLE_TO_DRAG, tablename.toUpperCase(), TABLE_DROP_LOC);
+		}catch(Exception e){
+			logger.error(e.toString());
+			test.log(LogStatus.FAIL, "Table add failed", printError(e,3));
+
+		}
+		waitForInvisibilityOfLoader();
+		waitForVisibilityOfElement(DOMAIN_TABLE, tablename.toUpperCase());
+	}
+	public boolean verifyAllTablesAdded(String[] table){
+		boolean present = false;
+		for(int i =0; i<table.length; i++) {
+			if(verifyTableAdded(table[i])) {
+				present = true;
+			}else{
+				present = false;
 			}
+		}
+		test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
+		return present;
+	}
+	public boolean verifyTableAdded(String table)  {
+		boolean display = false;
+		if(getTextValue(DOMAIN_TABLE,table.toUpperCase()).equals(table.replaceAll("_",""))) {
+			display = true;
 			test.log(LogStatus.INFO, "Snapshot Below: " + test.addScreenCapture(addScreenshot()));
 			test.log(LogStatus.PASS,"Tables added successfully");
-		}catch(Exception e) {
-			logger.error(e.toString());
+		}
+		else{
+
 			test.log(LogStatus.FAIL, "Table add failed");
-			throw e;
 
 		}
 
 		return display;
 	}
-	public void addTablesToDomain(String []tables)  {
+	public void addTablesToDomain(String []tables)   {
 		System.out.println(" in addTableToDomain");
 		clickButton(VIEWS_CHECKBOX);
 		waitForInvisibilityOfLoader();
 		for(int i = 0; i< tables.length;i++) {
 			System.out.println(tables[i]);
+			inputText(TABLE_SEARCH_BOX, tables[i]);
+			wait(1);
+			clickButton(TABLE_SEARCH_ICON);
+			waitForInvisibilityOfLoader();
+			waitForVisibilityOfElement(TABLE_TO_DRAG, tables[i].toUpperCase());
+			//wait(1);
 			try {
-
-				inputText(TABLE_SEARCH_BOX, tables[i]);
-				wait(1);
-				clickButton(TABLE_SEARCH_ICON);
-				waitForInvisibilityOfLoader();
-				waitForVisibilityOfElement(TABLE_TO_DRAG, tables[i].toUpperCase());
-				//wait(1);
 				dragAndDrop(TABLE_TO_DRAG, tables[i].toUpperCase(), TABLE_DROP_LOC);
-				waitForInvisibilityOfLoader();
-				waitForVisibilityOfElement(DOMAIN_TABLE, tables[i].toUpperCase());
-
-			} catch (Exception e) {
+			}catch(Exception e){
 				logger.error(e.toString());
-				test.log(LogStatus.FAIL, "Table add failed");
+				test.log(LogStatus.FAIL, "Table add failed", printError(e,3));
 
 			}
+			waitForInvisibilityOfLoader();
+			waitForVisibilityOfElement(DOMAIN_TABLE, tables[i].toUpperCase());
+
+
 		}
 	}
-	public void createFiltersFortable(String domain,String table,String filter,String text) throws Exception {
+	public void createFiltersFortable(String domain,String table,String column,String text)  {
 		try {
 			clickButton(DOMAIN_TABLE,table.toUpperCase());
 			waitAndClick(FILTER_TAB,domain);
 			clickButton(ADD_FILTER,domain);
-			dragAndDrop(FILTER_NAME_TO_DRAG,filter,FILTER_DROP_LOC);
-			clickButton(FILTER_NAME,filter);
+			dragAndDrop(FILTER_NAME_TO_DRAG,column,FILTER_DROP_LOC);
+			clickButton(FILTER_NAME,column);
 			clickButton(FREE_TEXT_FOR_FILTER,"1");
 			inputText(INPUT_FREE_TEXT_AREA,"1",text);
 			clickButton(SAVE_FILTER,"");
@@ -178,8 +215,6 @@ public class DomainPage extends BasePage {
 		}catch(Exception e) {
 			logger.error(e.toString());
 			test.log(LogStatus.FAIL, "Filter Creation Failed");
-			throw e;
-
 		}
 	}
 	public void createMultipleFiltersFortable(String domain,String table,String [][] filterdata)  throws Exception {
@@ -204,54 +239,125 @@ public class DomainPage extends BasePage {
 
 		}
 	}
-	public String createDomainLOV(String lovType,String query) throws Exception {
+	public String createDomainLOV(String domainName,String lovType,String query)  {
 		String lovName = Utility.getRandomNumber("ATDOMLOV");
-		try {
-			clickButton(DOMAIN_LOV_BUTTON);
-			clickButton(CREATE_LOV);
-			inputText(LOV_NAME_FIELD,lovName);
-			clickButton(LOV_TYPE_DROPDOWN);
-			clickButton(LOV_TYPE_VALUE,lovType);
-			inputText(LOV_QUERY_BOX,query);
-			clickButton(LOV_VALIDATE_SQL);
-			clickButton(SAVE_AND_NEXT);
-			waitAndClick(SAVE_LOV_BUTTON);
-
-		}catch(Exception e) {
-			logger.error(e.toString());
-			test.log(LogStatus.FAIL, "LOV Creation Failed");
-			throw e;
-		}
+		navigateDomainEditTab(domainName);
+		waitForVisibilityOfElement(DOMAIN_LOV_BUTTON);
+		clickButton(DOMAIN_LOV_BUTTON);
+		waitForVisibilityOfElement(CREATE_LOV);
+		clickButton(CREATE_LOV);
+		inputText(LOV_NAME_FIELD,lovName);
+		clickButton(LOV_TYPE_DROPDOWN);
+		clickButton(LOV_TYPE_VALUE,lovType);
+		inputText(LOV_QUERY_BOX,query);
+		clickButton(LOV_VALIDATE_SQL);
+		clickButton(SAVE_AND_NEXT);
+		waitAndClick(SAVE_LOV_BUTTON);
+		waitForVisibilityOfElement(VERIFY_LOV,lovName);
 		return lovName;
 	}
-	public boolean verifyLOVcreated(String lovName) throws Exception {
+	public void createDrillset(String domain){
+		if(!isElementDisplayed(CREATED_DOMAIN_TAB,domain)) {
+			navigateDomainEditTab(domain);
+		}
+		String drillsetName = Utility.getRandomNumber("DRILLSET");
+		waitAndClick(MORE_ICON_IN_DOMAIN_WINDOW);
+		clickButton(DRILL_SETS);
+		waitAndClick(CREATE_DRILL_SETS);
+		waitForVisibilityOfElement(ENTER_DRILLSET_NAME);
+		inputText(ENTER_DRILLSET_NAME,drillsetName);
+		clickButton(SAVE_DRILL_SETS);
+		clickButton(ADD_DRILL_QUERY_TABLES);
+        clickButton(SAVE_DRILL_SETS);
+        waitForVisibilityOfSuccessMessage();
+		test.log(LogStatus.PASS, test.addScreenCapture(addScreenshot()));
+		test.log(LogStatus.PASS,"Domain LOV created successfully");
+
+	}
+	public boolean verifyAllTableInDrillSet(String[] tables){
+		boolean available = false;
+		for(int i =0; i<tables.length;i++)
+		if(verifyTableInDrillSet(tables[i])){
+			available = true;
+		}else{
+			available = false;
+		}
+		test.log(LogStatus.INFO, test.addScreenCapture(addScreenshot()));
+		return available;
+	}
+
+	public boolean verifyTableInDrillSet(String tablename){
+		if(isElementDisplayed(VERIFY_TABLE_IN_DRILL_SET,tablename.replaceAll("_",""))){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public boolean isLOVcreated(String lovName)  {
 		boolean val =false;
 		try {
+			inputText(SEARCH_LOV,lovName);
 			waitForVisibilityOfElement(VERIFY_LOV,lovName);
 			if(getTextValue(VERIFY_LOV,lovName).contentEquals(lovName)) {
 				val = true;
+				test.log(LogStatus.INFO, test.addScreenCapture(addScreenshot()));
+				test.log(LogStatus.PASS,"Domain LOV created successfully");
 			}
-			test.log(LogStatus.INFO, test.addScreenCapture(addScreenshot()));
-			test.log(LogStatus.PASS,"Domain LOV created successfully");
 
 		}catch(Exception e) {
-			logger.error(e);
+			logger.error("LOV creation failed,e");
 			e.printStackTrace();
 			test.log(LogStatus.FAIL, "LOV Creation Failed"+test.addScreenCapture(addScreenshot()));
-			throw e;
 		}
 		return val;
 	}
+	public void navigateDomainEditTab(String domainName){
+		clickButton(EDIT_DOMAIN,domainName);
+		waitForInvisibilityOfLoader();
+		waitForVisibilityOfElement(CREATED_DOMAIN_TAB, domainName);
+	}
+	public void editDomainTable(String tablename){
+		if(isElementDisplayed(EDIT_DOMAIN_TABLE, tablename)){
+			clickButton(EDIT_DOMAIN_TABLE, tablename);
+		}
 
-	public void createJoinForTable(String domainName,String table) {
+	}
+
+	public void createJoinForTable(String masterDomain,String childDomain,String mastertable,String childtable,String masterCol,String childCol){
+		if(!isElementDisplayed(CREATED_DOMAIN_TAB, masterDomain)) {
+			navigateDomainEditTab(masterDomain);
+		}
+		waitForVisibilityOfElement(EDIT_DOMAIN_TABLE, mastertable);
+		editDomainTable(mastertable);
+		clickButton(JOIN_TAB, masterDomain);
+		clickButton(CREATE_JOIN);
+		clickButton(MASTER_COL_SEARCH_BUTTON);
+		inputText(MASTER_COL_SEARCH_INPUT,masterCol);
+		clickButton(SEARCH_DATA_IN_JOIN,masterCol);
+		clickButton(DOMAIN_SEARCH_BUTTON);
+		inputText(DOMAIN_SEARCH_INPUT,childDomain);
+		clickButton(SEARCH_DATA_IN_JOIN,childDomain);
+		clickButton(CHILD_TABLE_SEARCH_BUTTON);
+		inputText(CHILD_TABLE_SEARCH_INPUT,childtable);
+		clickButton(SEARCH_DATA_IN_JOIN,childtable);
+		clickButton(CHILD_COL_SEARCH_BUTTON);
+		inputText(CHILD_COL_SEARCH_INPUT,childCol);
+		clickButton(SEARCH_DATA_IN_JOIN,childCol);
+		clickButton(REVERSE_JOIN);
+		clickButton(SAVE_JOIN);
+		waitForVisibilityOfSuccessMessage();
+		clickButton(SAVE_TABLE);
+		waitForVisibilityOfSuccessMessage();
+
+	}
+
+	public void createSuggestedJoinForTable(String domainName,String table) {
 		try {
-			clickButton(EDIT_DOMAIN,domainName);
-			waitForInvisibilityOfLoader();
-			waitForVisibilityOfElement(CREATED_DOMAIN_TAB, domainName);
-			waitForVisibilityOfElement(EDIT_DOMAIN_TABLE, table);
-			if(isElementDisplayed(EDIT_DOMAIN_TABLE, table)){
-				clickButton(EDIT_DOMAIN_TABLE, table);
+			if(!isElementDisplayed(CREATED_DOMAIN_TAB, domainName)) {
+				navigateDomainEditTab(domainName);
 			}
+			waitForVisibilityOfElement(EDIT_DOMAIN_TABLE, table);
+			editDomainTable(table);
 			clickButton(JOIN_TAB, domainName);
 			clickButton(SGGESTED_JOINS, domainName);
 			waitForInvisibilityOfLoader();

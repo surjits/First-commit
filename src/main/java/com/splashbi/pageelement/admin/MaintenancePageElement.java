@@ -7,25 +7,25 @@ import com.splashbi.utility.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public enum AdminPageElement implements InitPageElement {
-    ADMIN_HOME(getValueFromPropFile("admin_home")),
-    CONNECTORS(getValueFromPropFile("connectors")),
-    USERS(getValueFromPropFile("users")),
-    SETUP(getValueFromPropFile("Setup")),
-    SETTINGS(getValueFromPropFile("Settings")),
-    ERP_MAPPING(getValueFromPropFile("erp_mapping")),
-    MAINTENANCE(getValueFromPropFile("maintenance")),
+public enum MaintenancePageElement implements InitPageElement {
+    MAINTENANCE_HOME(getValueFromPropFile("maintenance_home")),
+    INPUT_SEARCH_PROCESS(getValueFromPropFile("input_search_process")),
+    APPLY_BUTTON(getValueFromPropFile("apply_button")),
+    REFRESH_BUTTON(getValueFromPropFile("refresh_button")),
+    PROCESS_RECORDS(getValueFromPropFile("process_records")),
+    FIRST_SEARCH_RECORD(getValueFromPropFile("first_searched_record")),
+    PROCESS_STATUS(getValueFromPropFile("process_status")),
     END(getValueFromPropFile("submit"));
     private String loc;
     public String expression;
     WebElement e;
-    AdminPageElement(String val){
+    MaintenancePageElement(String val){
 
         loc = val;
 
     }
     public static String getValueFromPropFile(String key) {
-        String value = Utility.getValueFromPropertyFile(Constant.OR_PATH+"/"+"AdminPage.properties",key);
+        String value = Utility.getValueFromPropertyFile(Constant.OR_PATH+"/"+"MaintenancePage.properties",key);
         return value;
     }
     @Override
@@ -39,3 +39,4 @@ public enum AdminPageElement implements InitPageElement {
 
     }
 }
+

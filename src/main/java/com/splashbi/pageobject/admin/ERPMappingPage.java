@@ -235,8 +235,19 @@ public class ERPMappingPage extends BasePage {
         }
         return download;
     }
-
-
+    public String importEBSUser(String connector){
+        String ebsUser;
+        waitForVisibilityOfElement(IMPORT_EBS_USER);
+        clickButton(IMPORT_EBS_USER);
+        selectFromlistByKeyAction(IMPORT_USER_CONNECTION_LIST,connector);
+        ebsUser = getAttributeValue(FIRST_AVAILABLE_USER_TO_ADD_FOR_IMPORT,"title");
+        clickButton(SELECT_FIRST_AVAILABLE_USER_TO_ADD_FOR_IMPORT);
+        clickButton(MOVE_RIGHT_AVAILABLE_USER);
+        waitForVisibilityOfElement(FIRST_USER_IN_SELECTED_LIST_TO_IMPORT);
+        clickButton(SAVE_IMPORT_USER);
+        waitForVisibilityOfSuccessMessage();
+        return ebsUser;
+    }
     public static void main(String args[]){
         WebDriver driver=null;
         ERPMappingPage erp = new ERPMappingPage();

@@ -24,7 +24,8 @@ public enum DomainPageElement implements InitPageElement {
 	TABLE_SEARCH_BOX(getValueFromPropFile("table_searchbox")),
 	TABLE_LIST(getValueFromPropFile("table_list")),
 	VIEWS_CHECKBOX(getValueFromPropFile("views_checkbox")),
-
+	DRILL_QUERY_CHECKBOX(getValueFromPropFile("drill_query_checkbox")),
+	DRILL_QUERY_ROW(getValueFromPropFile("drill_query_row")),
 	TABLE_SEARCH_ICON(getValueFromPropFile("table_search_icon")),
 	TABLE_DROP_LOC(getValueFromPropFile("table_drop_loc")),
 	FILTER_DROP_LOC(getValueFromPropFile("table_drop_loc")),
@@ -32,7 +33,13 @@ public enum DomainPageElement implements InitPageElement {
 	SEARCH_DOMAIN(getValueFromPropFile("search_domain")),
 	LOAD_JOINS(getValueFromPropFile("load_joins")),
 	MASTER_COL_SEARCH_BUTTON(getValueFromPropFile("master_col_search_button")),
+	MASTER_COL_SEARCH_INPUT(getValueFromPropFile("master_col_serach_input")),
 	CHILD_COL_SEARCH_BUTTON(getValueFromPropFile("child_col_search_button")),
+	CHILD_COL_SEARCH_INPUT(getValueFromPropFile("child_col_search_input")),
+	CHILD_TABLE_SEARCH_BUTTON(getValueFromPropFile("chlid_table_search_button")),
+	CHILD_TABLE_SEARCH_INPUT(getValueFromPropFile("chlid_table_search_input")),
+	DOMAIN_SEARCH_BUTTON(getValueFromPropFile("child_col_search_button")),
+	DOMAIN_SEARCH_INPUT(getValueFromPropFile("domain_search_input")),
 	REVERSE_JOIN(getValueFromPropFile("reverse_join")),
 	SAVE_JOIN(getValueFromPropFile("save_join")),
 	SAVE_TABLE(getValueFromPropFile("save_table")),
@@ -46,12 +53,19 @@ public enum DomainPageElement implements InitPageElement {
 	MOVE_RIGHT_ICON(getValueFromPropFile("move_right_icon")),
 	EDIT_ENABLE(getValueFromPropFile("edit_enable")),
 	SAVE_SHARE(getValueFromPropFile("save_share")),
-	MORE_ICON_IN_DOMAIN_WINDOW(getValueFromPropFile("save_share")),
+	MORE_ICON_IN_DOMAIN_WINDOW(getValueFromPropFile("more_icon_in_domain_window")),
+	DRILL_SETS(getValueFromPropFile("drill_sets")),
 	INFO_DOMAIN(getValueFromPropFile("info_domain")),
+	CREATE_DRILL_SETS(getValueFromPropFile("create_drillset")),
+	ENTER_DRILLSET_NAME(getValueFromPropFile("input_drillset_name")),
+	SAVE_DRILL_SETS(getValueFromPropFile("save_drillset")),
+	DRILL_QUERY_TYPE_TABLE_LIST(getValueFromPropFile("drill_query_type_table_list")),
+	ADD_DRILL_QUERY_TABLES(getValueFromPropFile("add_drillquery_tables")),
+	ADD_TO_SET(getValueFromPropFile("add_to_set")),
 	DOMAIN_SHARE_TAB(getValueFromPropFile("domain_share_tab")),
 	USERS_EXPAND_ARROW(getValueFromPropFile("users_exapnd_arrow")),
 	//Domain LOV Edit elements
-	
+	BACK_TO_DOMAIN_EDIT(getValueFromPropFile("back_to_domain_edit")),
 	DOMAIN_LOV_BUTTON(getValueFromPropFile("domain_lov_button")),
 	CREATE_LOV(getValueFromPropFile("create_lov")),
 	LOV_NAME_FIELD(getValueFromPropFile("lov_name_field")),
@@ -60,6 +74,7 @@ public enum DomainPageElement implements InitPageElement {
 	LOV_VALIDATE_SQL(getValueFromPropFile("lov_validate_sql")),
 	SAVE_AND_NEXT(getValueFromPropFile("save_and_next")),
 	SAVE_LOV_BUTTON(getValueFromPropFile("save_lov_button")),
+	SEARCH_LOV(getValueFromPropFile("search_lov")),
     END(getValueFromPropFile("submit"));
 	
 	private String loc;

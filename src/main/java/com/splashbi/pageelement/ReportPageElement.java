@@ -9,6 +9,8 @@ import com.splashbi.utility.Utility;
 public enum ReportPageElement implements InitPageElement{
 	
 	CREATE_DROPDOWN(getValueFromPropFile("create_dropdown_button")),
+	SEARCH_REPORT(getValueFromPropFile("search_report")),
+	VERIFY_SEARCHED_REPORT(getValueFromPropFile("verify_searched_report")),
 	VERIFY_DOMAINS_HEADER(getValueFromPropFile("verify_domains_header")),
 	VERIFY_COLUMN_PROPERTIES_WINDOW(getValueFromPropFile("verify_column_properties_window")),
 	VERIFY_ALL_OMAINS_TABLE(getValueFromPropFile("verify_all_domains_table")),
@@ -39,8 +41,10 @@ public enum ReportPageElement implements InitPageElement{
 	ADD_COL_PROPERTY(getValueFromPropFile("add_column_property")),
 	DROP_PLACE(getValueFromPropFile("drop_place")),
 	SAVE_REPORT_FILTER(getValueFromPropFile("save_report_filter")),
+	RUN_THE_REPORT(getValueFromPropFile("run_the_report")),
 	RUN_REPORT(getValueFromPropFile("run_report")),
 	OPTION_MORE(getValueFromPropFile("more_option")),
+	SUBMIT_A_REPORT(getValueFromPropFile("submit_a_report")),
     SUBMIT_REPORT(getValueFromPropFile("submit")),
 	SUBMIT_SUCCESS(getValueFromPropFile("verify_success")),
 	SQL_SELECT_CONTENT(getValueFromPropFile("sql_select_content")),

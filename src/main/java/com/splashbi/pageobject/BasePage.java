@@ -468,9 +468,19 @@ public class BasePage <T extends InitPageElement> {
 			throw e;
 		}
 	}
-	public void
-	clickButton(T element)  {
-		//waitForVisibilityOfElement(element);
+	public String getAttributeValue(T element, String attribute){
+		String value="";
+		switch(attribute) {
+			case "title":
+			   value= getWebElement(element).getAttribute("titile");
+			   break;
+			case "name":
+				value = getWebElement(element).getAttribute("titile");
+			break;
+		}
+		return value;
+	}
+	public void clickButton(T element)  {
 		we = getWebElement(element);
 		try {
 			we.click();
@@ -501,9 +511,14 @@ public class BasePage <T extends InitPageElement> {
 			WebElement we = driver.findElement(By.xpath("//span[contains(@class,'warning-text') and text()='Error']"));
 			if(we.isDisplayed()){
 				isPresent = true;
+				test.log(LogStatus.FAIL, "Error Occured" + test.addScreenCapture(addScreenshot()));
+				logger.debug("An error occured");
+				exitExecution();
+
 			}
 
 		}catch(Exception e){
+			isPresent = false;
 			logger.debug("Error warning not found");
 		}
 		return isPresent;
@@ -686,6 +701,8 @@ public class BasePage <T extends InitPageElement> {
 				displayed = true;
 			}
 		}catch(Exception e){
+			logger.debug(element +": not displayed");
+			//test.log(LogStatus.FAIL,element +": not displayed");
 			displayed = false;
 		}
 		return displayed;
@@ -784,7 +801,7 @@ public class BasePage <T extends InitPageElement> {
 		}
 	}
 
-	public String captureElementScreenshot(T element) throws Exception{
+	public String captureElementScreenshot(T element){
 
 		File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		int ImageWidth = getWebElement(element,"").getSize().getWidth();
@@ -792,12 +809,16 @@ public class BasePage <T extends InitPageElement> {
 		Point point = getWebElement(element,"").getLocation();
 		int xcord = point.getX();
 		int ycord = point.getY();
+		final ByteArrayOutputStream os = new ByteArrayOutputStream();
+		try {
+			BufferedImage img = ImageIO.read(screen);
+			BufferedImage dest = img.getSubimage(xcord, ycord, ImageWidth, ImageHeight);
+			ImageIO.write(dest, "png", os);
+			return Base64.getEncoder().encodeToString(os.toByteArray());
+		}catch(final IOException e){
+			throw new UncheckedIOException(e);
+		}
 
-		BufferedImage img = ImageIO.read(screen);
-		BufferedImage dest = img.getSubimage(xcord, ycord, ImageWidth, ImageHeight);
-		ImageIO.write(dest, "png", screen);
-		FileUtils.copyFile(screen, new File(Constant.SCREENSHOT_PATH+"\\screenshot.png"));
-		return convertImageToString(screen);
 	}
 
 

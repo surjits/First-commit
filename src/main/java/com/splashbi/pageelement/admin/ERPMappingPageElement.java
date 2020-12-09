@@ -51,6 +51,15 @@ public enum ERPMappingPageElement implements InitPageElement {
     EXPORT_USER_MAPPING(getValueFromPropFile("export_user_mapping")),
     EXPORT_USER_MAPPING_POPUP_HEADER(getValueFromPropFile("export_user_mapping_popup_header")),
     OK_BUTTON_IN_USER_MAPPING_EXPORT_POPUP(getValueFromPropFile("ok_button_in_user_mapping_export_popup")),
+    IMPORT_EBS_USER(getValueFromPropFile("import_ebs_user")),
+    IMPORT_USER_CONNECTION_LIST(getValueFromPropFile("import_user_connection_list")),
+    USER_IMPORT_AUTHENTICATION_METHOD(getValueFromPropFile("user_import_authenitication_list")),
+    SELECT_FIRST_AVAILABLE_USER_TO_ADD_FOR_IMPORT(getValueFromPropFile("select_first_available_user_to_add_for_import")),
+    FIRST_AVAILABLE_USER_TO_ADD_FOR_IMPORT(getValueFromPropFile("first_available_user_to_add_for_import")),
+    MOVE_RIGHT_AVAILABLE_USER(getValueFromPropFile("move_right_available_user")),
+    FIRST_USER_IN_SELECTED_LIST_TO_IMPORT(getValueFromPropFile("first_user_in_selected_list_for_import")),
+    SAVE_IMPORT_USER(getValueFromPropFile("save_import_user")),
+    //SELECT_FIRST_RECORD_IN_USER_MAPPING_SEARCH(getValueFromPropFile("checkbox_for_first_record_in_user_mapping_search")),
     WARNING_POPUP(getValueFromPropFile("warning_popup"));
 
 

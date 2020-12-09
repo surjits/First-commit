@@ -241,5 +241,9 @@ public class UsersPage extends BasePage {
         clickButton(SAVE_USER_EDIT);
         waitForVisibilityOfSuccessMessage();
     }
+    public void verifyEbsUserMapping(String username, String connection){
+       searchUser(username);
+        navigateToUserEdit();
+    }
 
 }

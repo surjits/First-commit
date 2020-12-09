@@ -25,10 +25,12 @@ public enum DynamicPageElement implements InitPageElement {
     FILTER_TAB(getValueFromPropFile("filter_tab")),
     JOIN_TAB(getValueFromPropFile("joins_tab")),
     SGGESTED_JOINS(getValueFromPropFile("suggested_joins")),
+
     VERIFY_TABLE_IN_SUGGESTED_JOIN_WINDOW(getValueFromPropFile("verify_table_in_suggested_join_window")),
-    CREATE_JOIN(getValueFromPropFile("table_join_save")),
+    CREATE_JOIN(getValueFromPropFile("create_join")),
     SELECT_ALL_JOIN_TABLE(getValueFromPropFile("table_join_save")),
-    MASTER_COL_DATA(getValueFromPropFile("master_column_data")),
+    SEARCH_DATA_IN_JOIN(getValueFromPropFile("searched_data_in_join")),
+    SEARCH_FIELD_IN_MASTER_TABLE(getValueFromPropFile("search_column_in_master_table")),
     ADD_FILTER(getValueFromPropFile("add_filter")),
     FILTER_NAME_TO_DRAG(getValueFromPropFile("filter_name_to_drag")),
     FILTER_NAME(getValueFromPropFile("filter_name")),
@@ -42,6 +44,8 @@ public enum DynamicPageElement implements InitPageElement {
     MASTER_TABLE_IN_JOIN(getValueFromPropFile("master_table_in_join")),
 	LOV_TYPE_VALUE(getValueFromPropFile("lov_type")),
 	VERIFY_LOV(getValueFromPropFile("verify_lov")),
+    TABLE_IN_AVAILABLE_DRILL_TABLES(getValueFromPropFile("table_in_available_drll_tables")),
+    VERIFY_TABLE_IN_DRILL_SET(getValueFromPropFile("table_in_drill_set")),
 
 //*********************************REPORT PAGE****************************************
     DOMAIN_NAME_IN_REPORT(getValueFromPropFile("click_domain_in_report")),
