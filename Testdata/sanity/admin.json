@@ -32,5 +32,17 @@
     {
       "Run": "Yes"
     }
+  ],
+  "importEbsUser": [
+    {
+      "Run": "Yes",
+      "Connector": "AAAA23",
+      "authentication_method": "EBS"
+    }
+  ],
+  "RunAndSubmitAnyReport": [
+    {
+      "Run": "Yes"
+    }
   ]
 }
